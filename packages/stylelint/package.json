@@ -1,0 +1,23 @@
+{
+  "name": "@nitic-astronomy/stylelint",
+  "version": "0.1.0",
+  "repository": "https://github.com/astronomy-club-at-nitic/nitic-astronomy.git",
+  "license": "MIT",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./**/*.js",
+    "lint:fix": "eslint ./**/*.js --fix",
+    "fmt": "prettier --check .",
+    "fmt:fix": "prettier --write ."
+  },
+  "devDependencies": {
+    "@nitic-astronomy/prettier": "workspace:*",
+    "eslint-config-nitic-astronomy-base": "workspace:*",
+    "stylelint-config-prettier": "9.0.5",
+    "stylelint-config-recess-order": "4.0.0",
+    "stylelint-config-standard-scss": "7.0.1",
+    "stylelint-prettier": "3.0.0"
+  }
+}

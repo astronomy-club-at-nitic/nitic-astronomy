@@ -1,0 +1,16 @@
+{
+  "name": "eslint-config-nitic-astronomy-node",
+  "version": "0.1.0",
+  "repository": "https://github.com/astronomy-club-at-nitic/nitic-astronomy.git",
+  "license": "MIT",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./**/*.js",
+    "lint:fix": "eslint ./**/*.js --fix"
+  },
+  "devDependencies": {
+    "eslint-config-nitic-astronomy-base": "workspace:*"
+  }
+}

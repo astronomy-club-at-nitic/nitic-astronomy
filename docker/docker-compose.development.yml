@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  app:
+    image: ghcr.io/astronomy-club-at-nitic/nitic-astronomy:latest
+    container_name: app
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile.development
+    volumes:
+      - type: bind
+        source: ../
+        target: /workspaces/nitic-astronomy/
+      - type: volume
+        source: pnpm-store
+        target: /workspaces/nitic-astronomy/.pnpm-store/
+    tty: true
+
+volumes:
+  pnpm-store:
+    driver: local

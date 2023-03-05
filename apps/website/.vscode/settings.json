@@ -1,0 +1,4 @@
+{
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "/workspaces/nitic-astronomy/node_modules/.pnpm/typescript@4.9.5/node_modules/typescript/lib"
+}

@@ -1,0 +1,14 @@
+changelog:
+  categories:
+    - title: Some critical issues have been resolved! 🚑
+      labels:
+        - 🚑️ critical
+    - title: Oh, There are new features!! ✨
+      labels:
+        - ✨ feature
+    - title: Other Changes
+      labels:
+        - "*"
+  exclude:
+    labels:
+      - 🤖 renovate

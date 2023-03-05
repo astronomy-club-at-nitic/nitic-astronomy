@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@nitic-astronomy/tsconfig/tsconfig.nextjs.json",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "rootDir": "./"
+  },
+  // HACK: Next.js unnecessarily rewrites tsconfig, but the developer has no choice, so we have no choice but to comply.
+  "include": ["./src/**/*", "./*.js", "./*.ts", ".next/types/**/*.ts", "/workspaces/nitic-astronomy/apps/website/.next/types/**/*.ts"],
+  "exclude": ["**/node_modules/**/*"]
+}

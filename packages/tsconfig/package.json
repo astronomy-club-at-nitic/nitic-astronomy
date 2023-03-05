@@ -1,0 +1,24 @@
+{
+  "name": "@nitic-astronomy/tsconfig",
+  "version": "0.1.0",
+  "repository": "https://github.com/astronomy-club-at-nitic/nitic-astronomy.git",
+  "license": "MIT",
+  "private": true,
+  "files": [
+    "./tsconfig.*.json"
+  ],
+  "scripts": {
+    "lint": "eslint ./**/*.json",
+    "lint:fix": "eslint ./**/*.json --fix",
+    "fmt": "prettier --check .",
+    "fmt:fix": "prettier --write ."
+  },
+  "devDependencies": {
+    "@nitic-astronomy/prettier": "workspace:*",
+    "@tsconfig/next-strictest": "1.0.1",
+    "@tsconfig/node-lts-strictest": "18.12.1",
+    "@tsconfig/node-lts-strictest-esm": "18.12.1",
+    "@tsconfig/strictest": "1.0.2",
+    "eslint-config-nitic-astronomy-base": "workspace:*"
+  }
+}
