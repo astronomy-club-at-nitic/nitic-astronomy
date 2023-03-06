@@ -7,6 +7,7 @@
     {
       "groupName": "all non-major dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "excludePackagePatterns": ["pnpm"],
       "automerge": true
     }
   ]
