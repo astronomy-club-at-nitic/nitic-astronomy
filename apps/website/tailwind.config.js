@@ -1,4 +1,5 @@
 const tailwindScrollbar = require('tailwind-scrollbar');
+const defaultTheme = require('tailwindcss/defaultTheme');
 const { createThemes } = require('tw-colors');
 
 const coreTokens = require('./src/style/token/core.json');
@@ -27,8 +28,38 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-noto-sans-jp)'],
-        code: ['var(--font-Shippori-mincho-b1)'],
+        main: ['var(--font-noto-sans-jp)', ...defaultTheme.fontFamily.sans],
+        article: ['var(--font-Shippori-mincho-b1)', ...defaultTheme.fontFamily.serif],
+      },
+      fontSize: {
+        article: [
+          '1.125rem',
+          {
+            lineHeight: '1.55', // 155%
+          },
+        ],
+        heading1: [
+          '2.5rem',
+          {
+            fontWeight: '700',
+          },
+        ],
+        heading2: [
+          '2rem',
+          {
+            fontWeight: '700',
+          },
+        ],
+        heading3: [
+          '1.75rem',
+          {
+            fontWeight: '700',
+          },
+        ],
+        small: '0.75rem',
+      },
+      lineHeight: {
+        medium: '1.55',
       },
     },
   },
