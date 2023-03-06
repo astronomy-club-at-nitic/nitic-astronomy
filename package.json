@@ -4,6 +4,14 @@
   "repository": "https://github.com/astronomy-club-at-nitic/nitic-astronomy.git",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0 <19",
+    "pnpm": ">=7.0.0"
+  },
+  "packageManager": "pnpm@7.28.0",
+  "volta": {
+    "node": "18.14.2"
+  },
   "scripts": {
     "preinstall": "pnpx only-allow pnpm",
     "prepare": "husky install",
@@ -35,13 +43,5 @@
     "ts-node": "10.9.1",
     "turbo": "1.8.3",
     "typescript": "4.9.5"
-  },
-  "engines": {
-    "node": ">=18.0.0 <19",
-    "pnpm": ">=7.0.0"
-  },
-  "packageManager": "pnpm@7.28.0",
-  "volta": {
-    "node": "18.14.2"
   }
 }
