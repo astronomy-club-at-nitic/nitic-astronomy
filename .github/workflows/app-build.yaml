@@ -3,7 +3,6 @@ name: app build
 on: push
 
 env:
-  node-version: 18
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
@@ -37,14 +36,18 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.node-version }}
+          # The action will look for `volta.node` first. If `volta.node` isn't defined, then it will look for `engines.node`
+          # Refer: https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#node-version-file
+          node-version-file: "package.json"
 
       - name: setup pnpm
         uses: pnpm/action-setup@v2.2.4
         id: pnpm-install
         with:
+          # Version of pnpm to install:
+          # Optional when there is a packageManager field in the package.json.
+          # Refer: https://github.com/pnpm/action-setup#inputs
           run_install: false
-          version: 7.26.3
 
       - name: get pnpm store
         id: pnpm-cache
