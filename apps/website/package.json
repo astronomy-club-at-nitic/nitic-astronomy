@@ -24,7 +24,7 @@
     "date-fns": "2.29.3",
     "date-fns-tz": "2.0.0",
     "dotenv": "16.0.3",
-    "framer-motion": "10.0.2",
+    "framer-motion": "10.1.0",
     "next": "13.2.3",
     "next-remove-imports": "1.0.10",
     "react": "18.2.0",
