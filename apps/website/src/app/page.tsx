@@ -1,7 +1,31 @@
 import type { Metadata } from 'next';
 import type { FC } from 'react';
 
-const RootPage: FC = () => <div />;
+const RootPage: FC = () => (
+  <div className="flex min-h-screen flex-col items-center justify-center gap-4 text-keyplate-12">
+    <hgroup className="text-center">
+      <h1 className="my-4 text-4xl font-bold">
+        <span className="rounded-full bg-primary-3 px-8 py-2 text-primary-11">Astronomy Club</span> at&nbsp;NITIC
+      </h1>
+      <p>
+        Next 13 with <code className="bg-keyplate-3 text-keyplate-11">/app</code>{' '}
+        <span className="font-bold text-teal-11">styled using Tailwind CSS</span>
+      </p>
+    </hgroup>
+    <article className="max-w-2xl">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+      </p>
+      <p>
+        そこでは、あらゆる事が可能である。人は一瞬にして氷雲の上に飛躍し大循環の風を従へて北に旅する事もあれば、赤い花杯の下を行く蟻と語ることもできる。
+        罪や、かなしみでさへそこでは聖くきれいにかゞやいてゐる。
+      </p>
+    </article>
+  </div>
+);
 
 export default RootPage;
 
