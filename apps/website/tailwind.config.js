@@ -14,6 +14,9 @@ const config = {
   darkMode: ['[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
   theme: {
     colors: {
+      transparent: 'transparent',
+      white: '#fff',
+      black: '#000',
       primary: coreTokens.colors.plum,
       info: coreTokens.colors.cyan,
       success: coreTokens.colors.green,
