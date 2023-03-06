@@ -72,6 +72,7 @@ importers:
       framer-motion: 10.0.2
       next: 13.2.3
       next-remove-imports: 1.0.10
+      next-themes: ^0.2.1
       postcss: 8.4.21
       postcss-loader: 7.0.2
       react: 18.2.0
@@ -131,6 +132,7 @@ importers:
       chromatic: 6.17.1
       css-loader: 6.7.3_webpack@5.75.0
       eslint-config-nitic-astronomy-nextjs: link:../../packages/eslint/eslint-config-nitic-astronomy-nextjs
+      next-themes: 0.2.1_nvzgbose6yf6w7ijjprgspqefi
       postcss: 8.4.21
       postcss-loader: 7.0.2_6jdsrmfenkuhhw3gx4zvjlznce
       react-refresh: 0.14.0
@@ -11652,6 +11654,18 @@ packages:
       - supports-color
       - webpack
     dev: false
+
+  /next-themes/0.2.1_nvzgbose6yf6w7ijjprgspqefi:
+    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 13.2.3_4pgn6omj4irpgog4tpnzary34q
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: true
 
   /next/13.2.3_4pgn6omj4irpgog4tpnzary34q:
     resolution: {integrity: sha512-nKFJC6upCPN7DWRx4+0S/1PIOT7vNlCT157w9AzbXEgKy6zkiPKEt5YyRUsRZkmpEqBVrGgOqNfwecTociyg+w==}

@@ -61,6 +61,7 @@
     "chromatic": "6.17.1",
     "css-loader": "6.7.3",
     "eslint-config-nitic-astronomy-nextjs": "workspace:*",
+    "next-themes": "^0.2.1",
     "postcss": "8.4.21",
     "postcss-loader": "7.0.2",
     "react-refresh": "0.14.0",
