@@ -15,7 +15,7 @@ importers:
       jest: 29.5.0
       lint-staged: 13.1.2
       prettier: 2.8.4
-      rimraf: 4.3.1
+      rimraf: 4.4.0
       stylelint: 15.2.0
       ts-jest: 29.0.5
       ts-node: 10.9.1
@@ -33,7 +33,7 @@ importers:
       jest: 29.5.0_nvadb4ngcuh2lyv22apfdo6nc4
       lint-staged: 13.1.2
       prettier: 2.8.4
-      rimraf: 4.3.1
+      rimraf: 4.4.0
       stylelint: 15.2.0
       ts-jest: 29.0.5_7latyidodje3t47qvjmeshd2uy
       ts-node: 10.9.1_alpjt73dvgv6kni625hu7f2l4m
@@ -13736,8 +13736,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rimraf/4.3.1:
-    resolution: {integrity: sha512-GfHJHBzFQra23IxDzIdBqhOWfbtdgS1/dCHrDy+yvhpoJY5TdwdT28oWaHWfRpKFDLd3GZnGTx6Mlt4+anbsxQ==}
+  /rimraf/4.4.0:
+    resolution: {integrity: sha512-X36S+qpCUR0HjXlkDe4NAOhS//aHH0Z+h8Ckf2auGJk3PTnx5rLmrHkwNdbVQuCSUhOyFrlRvFEllZOYE+yZGQ==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
