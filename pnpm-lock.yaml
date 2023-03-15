@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@types/jest': 29.4.1
+      '@types/jest': 29.4.3
       '@types/node': 18.15.3
       '@types/uuid': 9.0.1
       cross-env: 7.0.3
@@ -22,7 +22,7 @@ importers:
       turbo: 1.8.3
       typescript: 4.9.5
     devDependencies:
-      '@types/jest': 29.4.1
+      '@types/jest': 29.4.3
       '@types/node': 18.15.3
       '@types/uuid': 9.0.1
       cross-env: 7.0.3
@@ -69,7 +69,7 @@ importers:
       date-fns-tz: 2.0.0
       dotenv: 16.0.3
       eslint-config-nitic-astronomy-nextjs: workspace:*
-      framer-motion: 10.3.1
+      framer-motion: 10.3.2
       next: 13.2.4
       next-remove-imports: 1.0.10
       next-themes: 0.2.1
@@ -96,7 +96,7 @@ importers:
       date-fns: 2.29.3
       date-fns-tz: 2.0.0_date-fns@2.29.3
       dotenv: 16.0.3
-      framer-motion: 10.3.1_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 10.3.2_biqbaboplfbrettd7655fr4n2y
       next: 13.2.4_cwt25fvgor7vrv5av276hckyge
       next-remove-imports: 1.0.10_webpack@5.75.0
       next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
@@ -4451,8 +4451,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/29.4.1:
-    resolution: {integrity: sha512-zDQSWXG+ZkEvs2zFFMszePhx4euKz+Yt3Gg1P+RHjfJBinTTr6L2DEyovO4V/WrKXuF0Dgn56GWGZPDa6TW9eQ==}
+  /@types/jest/29.4.3:
+    resolution: {integrity: sha512-rQ+fXtBHSDfgoTwGLLNuZ27fHpp14mCZSxGUZ3MlNExwJno5hz0uXEWtXfQlE8vaZmYAa6atbR9rpHk+NnlRaw==}
     dependencies:
       expect: 29.5.0
       pretty-format: 29.5.0
@@ -4594,7 +4594,7 @@ packages:
   /@types/testing-library__jest-dom/5.14.5:
     resolution: {integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==}
     dependencies:
-      '@types/jest': 29.4.1
+      '@types/jest': 29.4.3
     dev: true
 
   /@types/tough-cookie/4.0.2:
@@ -8829,8 +8829,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/10.3.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-z90Dwg2adrltIdYiibynBN+EbSRrakFKGgOnE5TN24E1bmb2TdpfzFqvwxLTvvMimh+/yN43njMFKFKe2CkY/g==}
+  /framer-motion/10.3.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-8GrK3X2vXG/9LJCNJuU5gKxDwSN0VTf7tD6MFP3S9F7rgsUavx+8ZNwhfZfak6maCBBHZ1m86K7TIXpbdfML2w==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
