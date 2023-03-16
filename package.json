@@ -25,7 +25,7 @@
     "tsconfig": "pnpm --filter @nitic-astronomy/tsconfig"
   },
   "devDependencies": {
-    "@types/jest": "29.4.4",
+    "@types/jest": "29.5.0",
     "@types/node": "18.15.3",
     "@types/uuid": "9.0.1",
     "cross-env": "7.0.3",
@@ -37,7 +37,7 @@
     "lint-staged": "13.2.0",
     "prettier": "2.8.4",
     "rimraf": "4.4.0",
-    "stylelint": "15.2.0",
+    "stylelint": "15.3.0",
     "ts-jest": "29.0.5",
     "ts-node": "10.9.1",
     "turbo": "1.8.3",
