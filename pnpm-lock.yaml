@@ -69,7 +69,7 @@ importers:
       date-fns-tz: 2.0.0
       dotenv: 16.0.3
       eslint-config-nitic-astronomy-nextjs: workspace:*
-      framer-motion: 10.3.4
+      framer-motion: 10.4.0
       next: 13.2.4
       next-remove-imports: 1.0.10
       next-themes: 0.2.1
@@ -96,7 +96,7 @@ importers:
       date-fns: 2.29.3
       date-fns-tz: 2.0.0_date-fns@2.29.3
       dotenv: 16.0.3
-      framer-motion: 10.3.4_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 10.4.0_biqbaboplfbrettd7655fr4n2y
       next: 13.2.4_cwt25fvgor7vrv5av276hckyge
       next-remove-imports: 1.0.10_webpack@5.75.0
       next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
@@ -8829,8 +8829,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/10.3.4_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-JuvIMpEN0VxpgSiLPcY/edX3sQBdHzDQBnwFNf5hbr7Iwl0NTm7sMF9NUoKVR4geP/ICfBkZFVmjMLVPQZj+dA==}
+  /framer-motion/10.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-nhQTbtRxaE7eoNuFeDpp0CdDMHWV5WIKZtV1CSD+zbVZzp5I0vmagOdCTivgBVKgA3ErJH5fIFf8l9FILTYKHQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
