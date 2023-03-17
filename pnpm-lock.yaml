@@ -63,13 +63,13 @@ importers:
       '@types/react-dom': 18.0.11
       '@types/webpack': 5.28.0
       autoprefixer: 10.4.14
-      chromatic: 6.17.1
+      chromatic: 6.17.2
       css-loader: 6.7.3
       date-fns: 2.29.3
       date-fns-tz: 2.0.0
       dotenv: 16.0.3
       eslint-config-nitic-astronomy-nextjs: workspace:*
-      framer-motion: 10.5.0
+      framer-motion: 10.6.0
       next: 13.2.4
       next-remove-imports: 1.0.10
       next-themes: 0.2.1
@@ -96,7 +96,7 @@ importers:
       date-fns: 2.29.3
       date-fns-tz: 2.0.0_date-fns@2.29.3
       dotenv: 16.0.3
-      framer-motion: 10.5.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 10.6.0_biqbaboplfbrettd7655fr4n2y
       next: 13.2.4_cwt25fvgor7vrv5av276hckyge
       next-remove-imports: 1.0.10_webpack@5.75.0
       next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
@@ -128,7 +128,7 @@ importers:
       '@types/react-dom': 18.0.11
       '@types/webpack': 5.28.0
       autoprefixer: 10.4.14_postcss@8.4.21
-      chromatic: 6.17.1
+      chromatic: 6.17.2
       css-loader: 6.7.3_webpack@5.75.0
       eslint-config-nitic-astronomy-nextjs: link:../../packages/eslint/eslint-config-nitic-astronomy-nextjs
       postcss: 8.4.21
@@ -6528,8 +6528,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic/6.17.1:
-    resolution: {integrity: sha512-CKCIV+QiNsQUHaZu2uQkm9A140Fd9sPgf61IsbJCwPspb97tHxs6hbqzf1QjaJJL37G6UqR3u12bzPld7JB96w==}
+  /chromatic/6.17.2:
+    resolution: {integrity: sha512-rtrkywh1CuDDuuiRWXpdiX38aEGN3sGCATsgdh3X/EUBjQjgQtEbSzcMusC3cqz3K9dFKcWwKpFm3jaw9gNymA==}
     hasBin: true
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
@@ -8829,8 +8829,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/10.5.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-84Gh6Ct+KCk82YOnS7oq68IMlqcyaejrj2Xtxmh+CPOi7gqa1SZORZYWMJujQ2Qw0YRM2j1xQQdQo/+BtoQicQ==}
+  /framer-motion/10.6.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-RkZe8iBhdWNs1y2HfYh4WlM9Co11/Vu+JCSQzmLaP5alM3QbBiue6OkeXygfxsRDp4yCar95ExoHE0CZQNyuVQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
