@@ -81,7 +81,7 @@ importers:
       react-refresh: 0.14.0
       recoil: 0.7.7
       sass: 1.59.3
-      sass-loader: 13.2.0
+      sass-loader: 13.2.1
       sharp: 0.31.3
       storybook-addon-next-router: 4.0.2
       style-dictionary: 3.7.2
@@ -135,7 +135,7 @@ importers:
       postcss-loader: 7.1.0_6jdsrmfenkuhhw3gx4zvjlznce
       react-refresh: 0.14.0
       sass: 1.59.3
-      sass-loader: 13.2.0_sass@1.59.3+webpack@5.75.0
+      sass-loader: 13.2.1_sass@1.59.3+webpack@5.75.0
       storybook-addon-next-router: 4.0.2_3yxg4rbzlgdkxuf43qduzqpjgy
       style-dictionary: 3.7.2
       style-loader: 3.3.2_webpack@5.75.0
@@ -13762,8 +13762,8 @@ packages:
       - supports-color
     dev: true
 
-  /sass-loader/13.2.0_sass@1.59.3+webpack@5.75.0:
-    resolution: {integrity: sha512-JWEp48djQA4nbZxmgC02/Wh0eroSUutulROUusYJO9P9zltRbNN80JCBHqRGzjd4cmZCa/r88xgfkjGD0TXsHg==}
+  /sass-loader/13.2.1_sass@1.59.3+webpack@5.75.0:
+    resolution: {integrity: sha512-VQUrgUa5/waIzMrzyuko3sj5WD9NMsYph91cNICx+OaODbRtLl6To2fswLx8MH2qNxXFqRtpvdPQIa7mE93YOA==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       fibers: '>= 3.1.0'
