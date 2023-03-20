@@ -14,7 +14,7 @@ importers:
       husky: 8.0.3
       jest: 29.5.0
       lint-staged: 13.2.0
-      prettier: 2.8.4
+      prettier: 2.8.5
       rimraf: 4.4.0
       stylelint: 15.3.0
       ts-jest: 29.0.5
@@ -32,7 +32,7 @@ importers:
       husky: 8.0.3
       jest: 29.5.0_d2dllaz5dte7avnjm55wl7fmsu
       lint-staged: 13.2.0
-      prettier: 2.8.4
+      prettier: 2.8.5
       rimraf: 4.4.0
       stylelint: 15.3.0
       ts-jest: 29.0.5_7latyidodje3t47qvjmeshd2uy
@@ -69,7 +69,7 @@ importers:
       date-fns-tz: 2.0.0
       dotenv: 16.0.3
       eslint-config-nitic-astronomy-nextjs: workspace:*
-      framer-motion: 10.6.0
+      framer-motion: 10.6.1
       next: 13.2.4
       next-remove-imports: 1.0.10
       next-themes: 0.2.1
@@ -96,7 +96,7 @@ importers:
       date-fns: 2.29.3
       date-fns-tz: 2.0.0_date-fns@2.29.3
       dotenv: 16.0.3
-      framer-motion: 10.6.0_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 10.6.1_biqbaboplfbrettd7655fr4n2y
       next: 13.2.4_cwt25fvgor7vrv5av276hckyge
       next-remove-imports: 1.0.10_webpack@5.75.0
       next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
@@ -168,7 +168,7 @@ importers:
       eslint-config-prettier: 8.7.0_eslint@8.36.0
       eslint-plugin-json: 3.1.0
       eslint-plugin-jsx-a11y: 6.7.1_eslint@8.36.0
-      eslint-plugin-prettier: 4.2.1_eqzx3hpkgx5nnvxls3azrcc7dm
+      eslint-plugin-prettier: 4.2.1_e4jq4ivnnnwcsomlcyj2qoljy4
       eslint-plugin-react: 7.32.2_eslint@8.36.0
       eslint-plugin-storybook: 0.6.11_vgl77cfdswitgr47lm5swmv43m
       eslint-plugin-tailwindcss: 3.10.1_tailwindcss@3.2.7
@@ -215,7 +215,7 @@ importers:
       stylelint-config-prettier: 9.0.5
       stylelint-config-recess-order: 4.0.0
       stylelint-config-standard-scss: 7.0.1_postcss@8.4.21
-      stylelint-prettier: 3.0.0_prettier@2.8.4
+      stylelint-prettier: 3.0.0_prettier@2.8.5
 
   packages/tsconfig:
     specifiers:
@@ -8078,7 +8078,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_eqzx3hpkgx5nnvxls3azrcc7dm:
+  /eslint-plugin-prettier/4.2.1_e4jq4ivnnnwcsomlcyj2qoljy4:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -8091,7 +8091,7 @@ packages:
     dependencies:
       eslint: 8.36.0
       eslint-config-prettier: 8.7.0_eslint@8.36.0
-      prettier: 2.8.4
+      prettier: 2.8.5
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -8829,8 +8829,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/10.6.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-RkZe8iBhdWNs1y2HfYh4WlM9Co11/Vu+JCSQzmLaP5alM3QbBiue6OkeXygfxsRDp4yCar95ExoHE0CZQNyuVQ==}
+  /framer-motion/10.6.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-e1o4JKJ98/pfUkYkze+23A+r5SW6JujDSAEzIKWq6jsrVIE+QSwpu4U7L8+maOXcTnfAZlI930MfpvA/+zaa5g==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -12882,8 +12882,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier/2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+  /prettier/2.8.5:
+    resolution: {integrity: sha512-3gzuxrHbKUePRBB4ZeU08VNkUcqEHaUaouNt0m7LGP4Hti/NuB07C7PPTM/LkWqXoJYJn2McEo5+kxPNrtQkLQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -14699,14 +14699,14 @@ packages:
       postcss-sorting: 8.0.1_postcss@8.4.21
     dev: true
 
-  /stylelint-prettier/3.0.0_prettier@2.8.4:
+  /stylelint-prettier/3.0.0_prettier@2.8.5:
     resolution: {integrity: sha512-kIks1xw6np0zElokMT2kP6ar3S4MBoj6vUtPJuND1pFELMpZxVS/0uHPR4HDAVn0WAD3I5oF0IA3qBFxBpMkLg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       prettier: '>=2.0.0'
       stylelint: '>=14.0.0'
     dependencies:
-      prettier: 2.8.4
+      prettier: 2.8.5
       prettier-linter-helpers: 1.0.0
     dev: true
 
