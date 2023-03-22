@@ -15,7 +15,7 @@ importers:
       jest: 29.5.0
       lint-staged: 13.2.0
       prettier: 2.8.6
-      rimraf: 4.4.0
+      rimraf: 4.4.1
       stylelint: 15.3.0
       ts-jest: 29.0.5
       ts-node: 10.9.1
@@ -33,7 +33,7 @@ importers:
       jest: 29.5.0_757mb262zsxkcnuknwfdsckmku
       lint-staged: 13.2.0
       prettier: 2.8.6
-      rimraf: 4.4.0
+      rimraf: 4.4.1
       stylelint: 15.3.0
       ts-jest: 29.0.5_7latyidodje3t47qvjmeshd2uy
       ts-node: 10.9.1_345kigqis4fipgyy5xb3ndshmq
@@ -69,7 +69,7 @@ importers:
       date-fns-tz: 2.0.0
       dotenv: 16.0.3
       eslint-config-nitic-astronomy-nextjs: workspace:*
-      framer-motion: 10.8.4
+      framer-motion: 10.8.5
       next: 13.2.4
       next-remove-imports: 1.0.10
       next-themes: 0.2.1
@@ -96,7 +96,7 @@ importers:
       date-fns: 2.29.3
       date-fns-tz: 2.0.0_date-fns@2.29.3
       dotenv: 16.0.3
-      framer-motion: 10.8.4_biqbaboplfbrettd7655fr4n2y
+      framer-motion: 10.8.5_biqbaboplfbrettd7655fr4n2y
       next: 13.2.4_cwt25fvgor7vrv5av276hckyge
       next-remove-imports: 1.0.10_webpack@5.75.0
       next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
@@ -8829,8 +8829,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion/10.8.4_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-dNcWapHLw1uTH9Yukqj1+uU87YM7GEkz2HjjR/k5Efo5ZKhzHpEeTsifrulwhTOqOR2N009JkMhtHnHEhMfKkg==}
+  /framer-motion/10.8.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-qwvUAIwCc6fEZhg7ST+/z+f7Vt882jJvLiWZUHNdq2oZ/Y7gM6mLlpKi9xQg+pLu6DQVypikcKQ+MKnoFoXAJg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -13676,8 +13676,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rimraf/4.4.0:
-    resolution: {integrity: sha512-X36S+qpCUR0HjXlkDe4NAOhS//aHH0Z+h8Ckf2auGJk3PTnx5rLmrHkwNdbVQuCSUhOyFrlRvFEllZOYE+yZGQ==}
+  /rimraf/4.4.1:
+    resolution: {integrity: sha512-Gk8NlF062+T9CqNGn6h4tls3k6T1+/nXdOcSZVikNVtlRdYpA7wRJJMoXmuvOnLW844rPjdQ7JgXCYM6PPC/og==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
