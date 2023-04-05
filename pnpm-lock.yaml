@@ -86,7 +86,7 @@ importers:
       storybook-addon-next-router: 4.0.2
       style-dictionary: 3.7.2
       style-loader: 3.3.2
-      tailwind-merge: 1.11.0
+      tailwind-merge: 1.12.0
       tailwind-scrollbar: 3.0.0
       tailwindcss: 3.3.1
       ts-pattern: 4.2.2
@@ -105,7 +105,7 @@ importers:
       react-icons: 4.8.0_react@18.2.0
       recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
       sharp: 0.32.0
-      tailwind-merge: 1.11.0
+      tailwind-merge: 1.12.0
       ts-pattern: 4.2.2
     devDependencies:
       '@nitic-astronomy/jest': link:../../packages/jest
@@ -157,7 +157,7 @@ importers:
       eslint-plugin-prettier: 4.2.1
       eslint-plugin-react: 7.32.2
       eslint-plugin-storybook: 0.6.11
-      eslint-plugin-tailwindcss: 3.10.3
+      eslint-plugin-tailwindcss: 3.11.0
     devDependencies:
       '@typescript-eslint/eslint-plugin': 5.57.1_iify4w3mi7rbbu6mxzspkpx4b4
       '@typescript-eslint/parser': 5.57.1_ip5up2nocltd47wbnuyybe5dxu
@@ -171,7 +171,7 @@ importers:
       eslint-plugin-prettier: 4.2.1_ybb3aapb7235womryl2tm5ze2u
       eslint-plugin-react: 7.32.2_eslint@8.37.0
       eslint-plugin-storybook: 0.6.11_ip5up2nocltd47wbnuyybe5dxu
-      eslint-plugin-tailwindcss: 3.10.3_tailwindcss@3.3.1
+      eslint-plugin-tailwindcss: 3.11.0_tailwindcss@3.3.1
 
   packages/eslint/eslint-config-nitic-astronomy-base:
     specifiers: {}
@@ -8260,8 +8260,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-tailwindcss/3.10.3_tailwindcss@3.3.1:
-    resolution: {integrity: sha512-yDJDs0R6AHT1quc9cCB5mpg5s5hBH0yE5L57GYWfRQWidF3HVEVrRF+Hg/4metBJzKikTD9QPIFd6CZANarWOQ==}
+  /eslint-plugin-tailwindcss/3.11.0_tailwindcss@3.3.1:
+    resolution: {integrity: sha512-RaraOG4D6VXutKnoNvFQ4+frTWGJDKtezy1yCrGFS7Um1to/npDNdh2GL19IRoGB/eanbtwhxFXy+xyEw0grAg==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.2.2
@@ -15033,8 +15033,8 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwind-merge/1.11.0:
-    resolution: {integrity: sha512-oG3/328Y7LrfPMfkgMNxoqEk1ZQdXBxdphf9FFrreo8q0EtVIHt3bQf2IyFhQuVt8puB57lCRBNbazGhYAyz9w==}
+  /tailwind-merge/1.12.0:
+    resolution: {integrity: sha512-Y17eDp7FtN1+JJ4OY0Bqv9OA41O+MS8c1Iyr3T6JFLnOgLg3EvcyMKZAnQ8AGyvB5Nxm3t9Xb5Mhe139m8QT/g==}
     dev: false
 
   /tailwind-scrollbar/3.0.0_tailwindcss@3.3.1:
