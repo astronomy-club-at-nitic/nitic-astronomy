@@ -1,18 +1,18 @@
-const tailwindScrollbar = require('tailwind-scrollbar');
-const defaultTheme = require('tailwindcss/defaultTheme');
-const { createThemes } = require('tw-colors');
+import tailwindScrollbar from 'tailwind-scrollbar';
+import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
+import { createThemes } from 'tw-colors';
 
-const coreTokens = require('./src/style/token/core.json');
-const darkTokens = require('./src/style/token/dark.json');
-const lightTokens = require('./src/style/token/light.json');
+import coreTokens from './src/style/token/core.json';
+import darkTokens from './src/style/token/dark.json';
+import lightTokens from './src/style/token/light.json';
 
-/** @type {import('tailwindcss').Config} */
-const config = {
+const config: Config = {
   mode: 'jit',
   content: ['./src/**/*.{ts,tsx}'],
   // Tailwind CSSのユーティリティセレクタ`dark:`に対応するCSSセレクタ
   // この場合、`dark:`は`[data-theme="dark"] `に置き換えられる
-  darkMode: ['[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
+  darkMode: ['class', '[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
   theme: {
     colors: {
       transparent: 'transparent',
@@ -93,4 +93,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;
