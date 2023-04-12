@@ -1,12 +1,12 @@
-import type { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Footer } from './footer.layout';
 
-type Story = ComponentStoryObj<typeof Footer>;
+type Story = StoryObj<typeof Footer>;
 
-const meta: ComponentMeta<typeof Footer> = {
+const meta = {
   component: Footer,
   argTypes: {},
-};
+} satisfies Meta<typeof Footer>;
 
 export default meta;
 
