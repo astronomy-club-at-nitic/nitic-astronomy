@@ -147,6 +147,5 @@
   "eslint.workingDirectories": ["apps/website/"],
   "files.encoding": "utf8",
   "files.eol": "\n",
-  "jest.jestCommandLine": "pnpm apps -- test",
-  "jest.rootPath": "/workspaces/nitic-astronomy/"
+  "jest.jestCommandLine": "pnpm apps -- test"
 }
