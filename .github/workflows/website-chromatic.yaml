@@ -74,6 +74,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: apps/website
+          # HACK: This is a workaround for the issue that the chromaui/action@v1 doesn't support storybook v7.
+          buildScriptName: sb:build
 
   website-chromatic-check:
     runs-on: ubuntu-latest
