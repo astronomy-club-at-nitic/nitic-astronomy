@@ -29,7 +29,7 @@ const config = {
     extend: {
       fontFamily: {
         main: ['var(--font-noto-sans-jp)', ...defaultTheme.fontFamily.sans],
-        article: ['var(--font-Shippori-mincho-b1)', ...defaultTheme.fontFamily.serif],
+        article: ['var(--font-shippori-mincho-b1)', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         article: [
