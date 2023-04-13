@@ -1,9 +1,7 @@
-'use client';
-
-import { AnimatePresence } from 'framer-motion';
 import type { FC, ReactNode } from 'react';
-import { RecoilRoot } from 'recoil';
 import { fontFamily } from '@/core/font/family.font';
+import { AnimatePresence } from '@/core/provider/animate-presence.provider';
+import { RecoilRoot } from '@/core/provider/recoil-root.provider';
 import { ThemeProvider } from '@/core/provider/theme.provider';
 import { Footer } from '@/module/root/ui/footer.layout';
 import { Header } from '@/module/root/ui/header.layout';
@@ -25,7 +23,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
       >
         <ThemeProvider attribute="data-theme">
           <Header />
-          <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+          <AnimatePresence>
             <main className="min-h-full grow">{children}</main>
           </AnimatePresence>
           <Footer />
