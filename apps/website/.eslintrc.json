@@ -7,6 +7,14 @@
       {
         "patterns": ["../"]
       }
-    ]
+    ],
+    // HACK: Temporarily disable it because enabling it takes a lot of time at lint. Possibly bug in the `https://github.com/francoismassart/eslint-plugin-tailwindcss`.
+    "tailwindcss/enforces-shorthand": "off",
+    "tailwindcss/no-contradicting-classname": "off"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["twMerge"]
+    }
   }
 }
