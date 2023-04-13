@@ -8,7 +8,13 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {},
   },
-  staticDirs: ['../public'],
+  staticDirs: [
+    '../public',
+    {
+      from: '../src/core/font',
+      to: 'src/core/font',
+    },
+  ],
   stories: ['../src/**/*.story.tsx'],
   webpackFinal: (config) => {
     const finalConfig: Configuration = {
