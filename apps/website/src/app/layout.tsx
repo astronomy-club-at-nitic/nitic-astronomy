@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import { fontFamily } from '@/core/font/family.font';
-import { AnimatePresence } from '@/core/provider/animate-presence.provider';
-import { RecoilRoot } from '@/core/provider/recoil-root.provider';
+import { ContextProvider } from '@/core/provider/context.provider';
+import { PageTransitionAnimationProvider } from '@/core/provider/page-transition-animation.provider';
 import { ThemeProvider } from '@/core/provider/theme.provider';
 import { Footer } from '@/module/root/ui/footer.layout';
 import { Header } from '@/module/root/ui/header.layout';
@@ -12,7 +12,7 @@ type RootLayoutProps = {
 };
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => (
-  <RecoilRoot>
+  <ContextProvider>
     {/* `next-themes`プロバイダによるHydration差分を無視するため`suppressHydrationWarning`を付加する */}
     {/* 参照: https://github.com/pacocoursey/next-themes/issues/152 */}
     {/* 参照: https://github.com/khinshankhan/next-themes-app-dir-example */}
@@ -23,14 +23,14 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
       >
         <ThemeProvider attribute="data-theme">
           <Header />
-          <AnimatePresence>
+          <PageTransitionAnimationProvider>
             <main className="min-h-full grow">{children}</main>
-          </AnimatePresence>
+          </PageTransitionAnimationProvider>
           <Footer />
         </ThemeProvider>
       </body>
     </html>
-  </RecoilRoot>
+  </ContextProvider>
 );
 
 export default RootLayout;
