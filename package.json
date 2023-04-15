@@ -23,7 +23,7 @@
     "prettier": "pnpm --filter @nitic-astronomy/prettier",
     "stylelint": "pnpm --filter @nitic-astronomy/stylelint",
     "tsconfig": "pnpm --filter @nitic-astronomy/tsconfig",
-    "microcms": "pnpm --filter @nitic-astronomy/microcms"
+    "cms": "pnpm --filter @nitic-astronomy/cms"
   },
   "devDependencies": {
     "@types/jest": "29.5.0",
