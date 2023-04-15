@@ -10,12 +10,15 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "fmt": "prettier --check .",
-    "fmt:fix": "prettier --write ."
+    "fmt:fix": "prettier --write .",
+    "test": "jest --silent=false --verbose false --passWithNoTests"
   },
   "devDependencies": {
+    "@nitic-astronomy/jest": "workspace:*",
     "@nitic-astronomy/prettier": "workspace:*",
     "@nitic-astronomy/tsconfig": "workspace:*",
-    "eslint-config-nitic-astronomy-node": "workspace:*"
+    "eslint-config-nitic-astronomy-node": "workspace:*",
+    "jest": "29.5.0"
   },
   "dependencies": {
     "dotenv": "16.0.3",
