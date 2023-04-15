@@ -239,6 +239,28 @@ importers:
         specifier: 29.5.0
         version: 29.5.0
 
+  packages/microcms:
+    dependencies:
+      dotenv:
+        specifier: 16.0.3
+        version: 16.0.3
+      microcms-js-sdk:
+        specifier: 2.3.3
+        version: 2.3.3
+      zod:
+        specifier: 3.21.4
+        version: 3.21.4
+    devDependencies:
+      '@nitic-astronomy/prettier':
+        specifier: workspace:*
+        version: link:../prettier
+      '@nitic-astronomy/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      eslint-config-nitic-astronomy-node:
+        specifier: workspace:*
+        version: link:../eslint/eslint-config-nitic-astronomy-node
+
   packages/prettier: {}
 
   packages/stylelint:

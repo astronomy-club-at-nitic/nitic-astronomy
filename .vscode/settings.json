@@ -144,7 +144,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.format.enable": true,
   "eslint.packageManager": "pnpm",
-  "eslint.workingDirectories": ["apps/website/"],
+  "eslint.workingDirectories": ["apps/website/", "packages/microcms"],
   "files.encoding": "utf8",
   "files.eol": "\n",
   "jest.jestCommandLine": "pnpm apps -- test"

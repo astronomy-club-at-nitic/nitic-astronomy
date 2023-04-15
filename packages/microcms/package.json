@@ -1,0 +1,25 @@
+{
+  "name": "@nitic-astronomy/microcms",
+  "version": "0.1.0",
+  "repository": "https://github.com/astronomy-club-at-nitic/nitic-astronomy.git",
+  "license": "MIT",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "fmt": "prettier --check .",
+    "fmt:fix": "prettier --write ."
+  },
+  "devDependencies": {
+    "@nitic-astronomy/prettier": "workspace:*",
+    "@nitic-astronomy/tsconfig": "workspace:*",
+    "eslint-config-nitic-astronomy-node": "workspace:*"
+  },
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "microcms-js-sdk": "2.3.3",
+    "zod": "3.21.4"
+  }
+}
