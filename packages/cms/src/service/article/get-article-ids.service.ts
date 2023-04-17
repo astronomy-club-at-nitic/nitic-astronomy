@@ -4,8 +4,6 @@ import type { MicroCmsArticle } from '@/infra/microcms.type';
 import { MicroCmsApiEndpoint } from '@/infra/microcms.type';
 import type { Article } from '@/model/article.model';
 
-// export type GetArticleIdsQuery = never;
-
 export type GetArticleIdsResponse = {
   articleIds: Array<Article['id']>;
   totalCount: number;
