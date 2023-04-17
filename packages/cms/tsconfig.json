@@ -13,5 +13,7 @@
       "@/*": ["./src/*"]
     },
     "rootDir": "./"
-  }
+  },
+  "include": ["**/*"],
+  "exclude": ["**/node_modules/**/*", "*.js"]
 }
