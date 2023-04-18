@@ -22,7 +22,8 @@
     "eslint": "pnpm --filter @nitic-astronomy/eslint",
     "prettier": "pnpm --filter @nitic-astronomy/prettier",
     "stylelint": "pnpm --filter @nitic-astronomy/stylelint",
-    "tsconfig": "pnpm --filter @nitic-astronomy/tsconfig"
+    "tsconfig": "pnpm --filter @nitic-astronomy/tsconfig",
+    "cms": "pnpm --filter @nitic-astronomy/cms"
   },
   "devDependencies": {
     "@types/jest": "29.5.0",
