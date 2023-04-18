@@ -65,5 +65,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@NITIC_astronomy',
   },
-  themeColor: '#ab4aba', // primary-9
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f8f9fa' }, // keyplate-light-2
+    { media: '(prefers-color-scheme: dark)', color: '#1a1d1e' }, // keyplate-dark-2
+  ],
 };
