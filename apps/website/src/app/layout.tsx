@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 import { fontFamily } from '@/core/font/family.font';
 import { ContextProvider } from '@/core/provider/context.provider';
@@ -34,3 +35,35 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
 );
 
 export default RootLayout;
+
+// When VERCEL_URL is detected: https://${process.env.VERCEL_URL}
+// If there's no environment variable VERCEL_URL is set, will always fallback to http://localhost:${process.env.PORT || 3000}.
+// Refer: https://beta.nextjs.org/docs/api-reference/metadata#metadatabase
+const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
+
+export const metadata: Metadata = {
+  metadataBase: domain,
+
+  title: {
+    default: '茨城高専 天文部',
+    template: '%s | 茨城高専 天文部',
+  },
+  description: 'まったり星を眺めるのも、己の興味に従って研究をするのも、天文部ではすべてが自由。みなさんの入部をお待ちしています！',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1.0,
+  },
+  icons: '/favicon.png',
+  openGraph: {
+    // Open graph image will be provided via file-based configuration.
+    // Refer: https://beta.nextjs.org/docs/api-reference/metadata#static-images
+    type: 'website',
+    locale: 'ja_JP',
+    url: domain,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@NITIC_astronomy',
+  },
+  themeColor: '#ab4aba', // primary-9
+};
