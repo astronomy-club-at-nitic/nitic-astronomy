@@ -1,11 +1,3 @@
-export type { Article, ArticleDetail } from '@/model/article.model';
-export type { Member } from '@/model/member.model';
-export type { Tag } from '@/model/tag.model';
-
-export { ArticleSchema, ArticleDetailSchema } from '@/model/article.model';
-export { MemberSchema } from '@/model/member.model';
-export { TagSchema } from '@/model/tag.model';
-
 export { getArticles } from '@/service/article/get-articles.service';
 export type { GetArticlesQuery, GetArticlesResponse, GetArticles } from '@/service/article/get-articles.service';
 export { getArticleIds } from '@/service/article/get-article-ids.service';

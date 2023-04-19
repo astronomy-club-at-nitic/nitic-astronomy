@@ -173,6 +173,9 @@ importers:
 
   packages/cms:
     dependencies:
+      '@nitic-astronomy/model':
+        specifier: workspace:*
+        version: link:../model
       dotenv:
         specifier: 16.0.3
         version: 16.0.3

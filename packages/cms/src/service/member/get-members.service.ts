@@ -1,8 +1,8 @@
+import type { Member } from '@nitic-astronomy/model';
 import { convertMember } from '@/converter/member.converter';
 import { client } from '@/infra/client.factory';
 import type { MicroCmsMember } from '@/infra/microcms.type';
 import { MicroCmsApiEndpoint } from '@/infra/microcms.type';
-import type { Member } from '@/model/member.model';
 
 export type GetMembersQuery = {
   limit?: number;
