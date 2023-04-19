@@ -197,7 +197,7 @@ importers:
         version: link:../eslint/eslint-config-nitic-astronomy-node
       jest:
         specifier: 29.5.0
-        version: 29.5.0(@types/node@18.15.11)(ts-node@10.9.1)
+        version: 29.5.0
 
   packages/eslint:
     devDependencies:
@@ -267,6 +267,28 @@ importers:
         specifier: 29.5.0
         version: 29.5.0
 
+  packages/model:
+    dependencies:
+      zod:
+        specifier: 3.21.4
+        version: 3.21.4
+    devDependencies:
+      '@nitic-astronomy/jest':
+        specifier: workspace:*
+        version: link:../jest
+      '@nitic-astronomy/prettier':
+        specifier: workspace:*
+        version: link:../prettier
+      '@nitic-astronomy/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      eslint-config-nitic-astronomy-node:
+        specifier: workspace:*
+        version: link:../eslint/eslint-config-nitic-astronomy-node
+      jest:
+        specifier: 29.5.0
+        version: 29.5.0
+
   packages/prettier: {}
 
   packages/stylelint:
@@ -279,16 +301,16 @@ importers:
         version: link:../eslint/eslint-config-nitic-astronomy-base
       stylelint-config-prettier:
         specifier: 9.0.5
-        version: 9.0.5(stylelint@15.5.0)
+        version: 9.0.5
       stylelint-config-recess-order:
         specifier: 4.0.0
-        version: 4.0.0(stylelint@15.5.0)
+        version: 4.0.0
       stylelint-config-standard-scss:
         specifier: 8.0.0
-        version: 8.0.0(postcss@8.4.22)(stylelint@15.5.0)
+        version: 8.0.0(postcss@8.4.22)
       stylelint-prettier:
         specifier: 3.0.0
-        version: 3.0.0(prettier@2.8.7)(stylelint@15.5.0)
+        version: 3.0.0(prettier@2.8.7)
 
   packages/tsconfig:
     devDependencies:
@@ -2017,6 +2039,48 @@ packages:
       jest-message-util: 29.5.0
       jest-util: 29.5.0
       slash: 3.0.0
+    dev: true
+
+  /@jest/core@29.5.0:
+    resolution: {integrity: sha512-28UzQc7ulUrOQw1IsN/kv1QES3q2kkbl/wGslyhAclqZ/8cMdB5M68BffkIdSJgKBUt50d3hbwJ92XESlE7LiQ==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/console': 29.5.0
+      '@jest/reporters': 29.5.0
+      '@jest/test-result': 29.5.0
+      '@jest/transform': 29.5.0
+      '@jest/types': 29.5.0
+      '@types/node': 18.15.11
+      ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      ci-info: 3.8.0
+      exit: 0.1.2
+      graceful-fs: 4.2.11
+      jest-changed-files: 29.5.0
+      jest-config: 29.5.0(@types/node@18.15.11)
+      jest-haste-map: 29.5.0
+      jest-message-util: 29.5.0
+      jest-regex-util: 29.4.3
+      jest-resolve: 29.5.0
+      jest-resolve-dependencies: 29.5.0
+      jest-runner: 29.5.0
+      jest-runtime: 29.5.0
+      jest-snapshot: 29.5.0
+      jest-util: 29.5.0
+      jest-validate: 29.5.0
+      jest-watcher: 29.5.0
+      micromatch: 4.0.5
+      pretty-format: 29.5.0
+      slash: 3.0.0
+      strip-ansi: 6.0.1
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
     dev: true
 
   /@jest/core@29.5.0(ts-node@10.9.1):
@@ -6436,7 +6500,7 @@ packages:
     dependencies:
       confusing-browser-globals: 1.0.11
       eslint: 8.38.0
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.38.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)
       object.assign: 4.1.4
       object.entries: 1.1.6
       semver: 6.3.0
@@ -6454,7 +6518,7 @@ packages:
       '@typescript-eslint/parser': 5.59.0(eslint@8.38.0)(typescript@4.9.5)
       eslint: 8.38.0
       eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.27.5)(eslint@8.38.0)
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.38.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)
     dev: true
 
   /eslint-config-next@13.3.0(eslint@8.38.0)(typescript@4.9.5):
@@ -6555,6 +6619,35 @@ packages:
       - supports-color
     dev: true
 
+  /eslint-module-utils@2.7.4(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-node@0.3.7)(eslint@8.38.0):
+    resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint: '*'
+      eslint-import-resolver-node: '*'
+      eslint-import-resolver-typescript: '*'
+      eslint-import-resolver-webpack: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+      eslint:
+        optional: true
+      eslint-import-resolver-node:
+        optional: true
+      eslint-import-resolver-typescript:
+        optional: true
+      eslint-import-resolver-webpack:
+        optional: true
+    dependencies:
+      '@typescript-eslint/parser': 5.59.0(eslint@8.38.0)(typescript@4.9.5)
+      debug: 3.2.7
+      eslint: 8.38.0
+      eslint-import-resolver-node: 0.3.7
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.38.0):
     resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
     engines: {node: '>=4'}
@@ -6574,6 +6667,39 @@ packages:
       eslint: 8.38.0
       eslint-import-resolver-node: 0.3.7
       eslint-module-utils: 2.7.4(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.38.0)
+      has: 1.0.3
+      is-core-module: 2.12.0
+      is-glob: 4.0.3
+      minimatch: 3.1.2
+      object.values: 1.1.6
+      resolve: 1.22.2
+      semver: 6.3.0
+      tsconfig-paths: 3.14.2
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
+    dev: true
+
+  /eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.59.0)(eslint@8.38.0):
+    resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+    dependencies:
+      '@typescript-eslint/parser': 5.59.0(eslint@8.38.0)(typescript@4.9.5)
+      array-includes: 3.1.6
+      array.prototype.flat: 1.3.1
+      array.prototype.flatmap: 1.3.1
+      debug: 3.2.7
+      doctrine: 2.1.0
+      eslint: 8.38.0
+      eslint-import-resolver-node: 0.3.7
+      eslint-module-utils: 2.7.4(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-node@0.3.7)(eslint@8.38.0)
       has: 1.0.3
       is-core-module: 2.12.0
       is-glob: 4.0.3
@@ -6695,7 +6821,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.22
-      tailwindcss: 3.3.1(postcss@8.4.22)(ts-node@10.9.1)
+      tailwindcss: 3.3.1(postcss@8.4.22)
     dev: true
 
   /eslint-scope@5.1.1:
@@ -8248,6 +8374,34 @@ packages:
       - supports-color
     dev: true
 
+  /jest-cli@29.5.0:
+    resolution: {integrity: sha512-L1KcP1l4HtfwdxXNFCL5bmUbLQiKrakMUriBEcc1Vfz6gx31ORKdreuWvmQVBit+1ss9NNR3yxjwfwzZNdQXJw==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 29.5.0
+      '@jest/test-result': 29.5.0
+      '@jest/types': 29.5.0
+      chalk: 4.1.2
+      exit: 0.1.2
+      graceful-fs: 4.2.11
+      import-local: 3.1.0
+      jest-config: 29.5.0
+      jest-util: 29.5.0
+      jest-validate: 29.5.0
+      prompts: 2.4.2
+      yargs: 17.7.1
+    transitivePeerDependencies:
+      - '@types/node'
+      - supports-color
+      - ts-node
+    dev: true
+
   /jest-cli@29.5.0(@types/node@18.15.11)(ts-node@10.9.1):
     resolution: {integrity: sha512-L1KcP1l4HtfwdxXNFCL5bmUbLQiKrakMUriBEcc1Vfz6gx31ORKdreuWvmQVBit+1ss9NNR3yxjwfwzZNdQXJw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -8274,6 +8428,83 @@ packages:
       - '@types/node'
       - supports-color
       - ts-node
+    dev: true
+
+  /jest-config@29.5.0:
+    resolution: {integrity: sha512-kvDUKBnNJPNBmFFOhDbm59iu1Fii1Q6SxyhXfvylq3UTHbg6o7j/g8k2dZyXWLvfdKB1vAPxNZnMgtKJcmu3kA==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    peerDependencies:
+      '@types/node': '*'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      '@babel/core': 7.21.4
+      '@jest/test-sequencer': 29.5.0
+      '@jest/types': 29.5.0
+      babel-jest: 29.5.0(@babel/core@7.21.4)
+      chalk: 4.1.2
+      ci-info: 3.8.0
+      deepmerge: 4.3.1
+      glob: 7.2.3
+      graceful-fs: 4.2.11
+      jest-circus: 29.5.0
+      jest-environment-node: 29.5.0
+      jest-get-type: 29.4.3
+      jest-regex-util: 29.4.3
+      jest-resolve: 29.5.0
+      jest-runner: 29.5.0
+      jest-util: 29.5.0
+      jest-validate: 29.5.0
+      micromatch: 4.0.5
+      parse-json: 5.2.0
+      pretty-format: 29.5.0
+      slash: 3.0.0
+      strip-json-comments: 3.1.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /jest-config@29.5.0(@types/node@18.15.11):
+    resolution: {integrity: sha512-kvDUKBnNJPNBmFFOhDbm59iu1Fii1Q6SxyhXfvylq3UTHbg6o7j/g8k2dZyXWLvfdKB1vAPxNZnMgtKJcmu3kA==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    peerDependencies:
+      '@types/node': '*'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      '@babel/core': 7.21.4
+      '@jest/test-sequencer': 29.5.0
+      '@jest/types': 29.5.0
+      '@types/node': 18.15.11
+      babel-jest: 29.5.0(@babel/core@7.21.4)
+      chalk: 4.1.2
+      ci-info: 3.8.0
+      deepmerge: 4.3.1
+      glob: 7.2.3
+      graceful-fs: 4.2.11
+      jest-circus: 29.5.0
+      jest-environment-node: 29.5.0
+      jest-get-type: 29.4.3
+      jest-regex-util: 29.4.3
+      jest-resolve: 29.5.0
+      jest-runner: 29.5.0
+      jest-util: 29.5.0
+      jest-validate: 29.5.0
+      micromatch: 4.0.5
+      parse-json: 5.2.0
+      pretty-format: 29.5.0
+      slash: 3.0.0
+      strip-json-comments: 3.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-config@29.5.0(@types/node@18.15.11)(ts-node@10.9.1):
@@ -8632,6 +8863,26 @@ packages:
       jest-util: 29.5.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
+    dev: true
+
+  /jest@29.5.0:
+    resolution: {integrity: sha512-juMg3he2uru1QoXX078zTa7pO85QyB9xajZc6bU+d9yEGwrKX6+vGmJQ3UdVZsvTEUARIdObzH68QItim6OSSQ==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 29.5.0
+      '@jest/types': 29.5.0
+      import-local: 3.1.0
+      jest-cli: 29.5.0
+    transitivePeerDependencies:
+      - '@types/node'
+      - supports-color
+      - ts-node
     dev: true
 
   /jest@29.5.0(@types/node@18.15.11)(ts-node@10.9.1):
@@ -10037,6 +10288,23 @@ packages:
     dependencies:
       camelcase-css: 2.0.1
       postcss: 8.4.22
+    dev: true
+
+  /postcss-load-config@3.1.4(postcss@8.4.22):
+    resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: 2.1.0
+      postcss: 8.4.22
+      yaml: 1.10.2
     dev: true
 
   /postcss-load-config@3.1.4(postcss@8.4.22)(ts-node@10.9.1):
@@ -11495,26 +11763,23 @@ packages:
       client-only: 0.0.1
       react: 18.2.0
 
-  /stylelint-config-prettier@9.0.5(stylelint@15.5.0):
+  /stylelint-config-prettier@9.0.5:
     resolution: {integrity: sha512-U44lELgLZhbAD/xy/vncZ2Pq8sh2TnpiPvo38Ifg9+zeioR+LAkHu0i6YORIOxFafZoVg0xqQwex6e6F25S5XA==}
     engines: {node: '>= 12'}
     hasBin: true
     peerDependencies:
       stylelint: '>= 11.x < 15'
-    dependencies:
-      stylelint: 15.5.0
     dev: true
 
-  /stylelint-config-recess-order@4.0.0(stylelint@15.5.0):
+  /stylelint-config-recess-order@4.0.0:
     resolution: {integrity: sha512-sOb+OofMryBR91CbzgV2FavpONqiIeAE7cfrgyUHqePblWBKsYzoUuWThI5EjPRA7KKeovm6ykr7twWYLeafPQ==}
     peerDependencies:
       stylelint: '>=15'
     dependencies:
-      stylelint: 15.5.0
-      stylelint-order: 6.0.3(stylelint@15.5.0)
+      stylelint-order: 6.0.3
     dev: true
 
-  /stylelint-config-recommended-scss@10.0.0(postcss@8.4.22)(stylelint@15.5.0):
+  /stylelint-config-recommended-scss@10.0.0(postcss@8.4.22):
     resolution: {integrity: sha512-+YvPgUHi0W5mCJCKdupBCIsWPYNbWuJcRmFtSYujwNg+41ljFknhO9bpY6C+oahv659zW7W1AT7i6DQvJYYr1A==}
     peerDependencies:
       postcss: ^8.3.3
@@ -11525,20 +11790,17 @@ packages:
     dependencies:
       postcss: 8.4.22
       postcss-scss: 4.0.6(postcss@8.4.22)
-      stylelint: 15.5.0
-      stylelint-config-recommended: 11.0.0(stylelint@15.5.0)
-      stylelint-scss: 4.6.0(stylelint@15.5.0)
+      stylelint-config-recommended: 11.0.0
+      stylelint-scss: 4.6.0
     dev: true
 
-  /stylelint-config-recommended@11.0.0(stylelint@15.5.0):
+  /stylelint-config-recommended@11.0.0:
     resolution: {integrity: sha512-SoGIHNI748OCZn6BxFYT83ytWoYETCINVHV3LKScVAWQQauWdvmdDqJC5YXWjpBbxg2E761Tg5aUGKLFOVhEkA==}
     peerDependencies:
       stylelint: ^15.3.0
-    dependencies:
-      stylelint: 15.5.0
     dev: true
 
-  /stylelint-config-standard-scss@8.0.0(postcss@8.4.22)(stylelint@15.5.0):
+  /stylelint-config-standard-scss@8.0.0(postcss@8.4.22):
     resolution: {integrity: sha512-TDT/gJD/0LUDoUgkjF1uoI/4DfczXHxg7gJVcWT4/JbE6k5hszVuI14reNX+tEwSyMNhcK2BA7izrK+uVAz7XA==}
     peerDependencies:
       postcss: ^8.3.3
@@ -11548,31 +11810,28 @@ packages:
         optional: true
     dependencies:
       postcss: 8.4.22
-      stylelint: 15.5.0
-      stylelint-config-recommended-scss: 10.0.0(postcss@8.4.22)(stylelint@15.5.0)
-      stylelint-config-standard: 32.0.0(stylelint@15.5.0)
+      stylelint-config-recommended-scss: 10.0.0(postcss@8.4.22)
+      stylelint-config-standard: 32.0.0
     dev: true
 
-  /stylelint-config-standard@32.0.0(stylelint@15.5.0):
+  /stylelint-config-standard@32.0.0:
     resolution: {integrity: sha512-UnGJxYDyYFrIE9CjDMZRkrNh2o4lOtO+MVZ9qG5b8yARfsWho0GMx4YvhHfsv8zKKgHeWX2wfeyxmuoqcaYZ4w==}
     peerDependencies:
       stylelint: ^15.4.0
     dependencies:
-      stylelint: 15.5.0
-      stylelint-config-recommended: 11.0.0(stylelint@15.5.0)
+      stylelint-config-recommended: 11.0.0
     dev: true
 
-  /stylelint-order@6.0.3(stylelint@15.5.0):
+  /stylelint-order@6.0.3:
     resolution: {integrity: sha512-1j1lOb4EU/6w49qZeT2SQVJXm0Ht+Qnq9GMfUa3pMwoyojIWfuA+JUDmoR97Bht1RLn4ei0xtLGy87M7d29B1w==}
     peerDependencies:
       stylelint: ^14.0.0 || ^15.0.0
     dependencies:
       postcss: 8.4.22
       postcss-sorting: 8.0.2(postcss@8.4.22)
-      stylelint: 15.5.0
     dev: true
 
-  /stylelint-prettier@3.0.0(prettier@2.8.7)(stylelint@15.5.0):
+  /stylelint-prettier@3.0.0(prettier@2.8.7):
     resolution: {integrity: sha512-kIks1xw6np0zElokMT2kP6ar3S4MBoj6vUtPJuND1pFELMpZxVS/0uHPR4HDAVn0WAD3I5oF0IA3qBFxBpMkLg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -11581,10 +11840,9 @@ packages:
     dependencies:
       prettier: 2.8.7
       prettier-linter-helpers: 1.0.0
-      stylelint: 15.5.0
     dev: true
 
-  /stylelint-scss@4.6.0(stylelint@15.5.0):
+  /stylelint-scss@4.6.0:
     resolution: {integrity: sha512-M+E0BQim6G4XEkaceEhfVjP/41C9Klg5/tTPTCQVlgw/jm2tvB+OXJGaU0TDP5rnTCB62aX6w+rT+gqJW/uwjA==}
     peerDependencies:
       stylelint: ^14.5.1 || ^15.0.0
@@ -11594,7 +11852,6 @@ packages:
       postcss-resolve-nested-selector: 0.1.1
       postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
-      stylelint: 15.5.0
     dev: true
 
   /stylelint@15.5.0:
@@ -11737,6 +11994,41 @@ packages:
       tailwindcss: 3.x
     dependencies:
       tailwindcss: 3.3.1(postcss@8.4.22)(ts-node@10.9.1)
+    dev: true
+
+  /tailwindcss@3.3.1(postcss@8.4.22):
+    resolution: {integrity: sha512-Vkiouc41d4CEq0ujXl6oiGFQ7bA3WEhUZdTgXAhtKxSy49OmKs8rEfQmupsfF0IGW8fv2iQkp1EVUuapCFrZ9g==}
+    engines: {node: '>=12.13.0'}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
+    dependencies:
+      arg: 5.0.2
+      chokidar: 3.5.3
+      color-name: 1.1.4
+      didyoumean: 1.2.2
+      dlv: 1.1.3
+      fast-glob: 3.2.12
+      glob-parent: 6.0.2
+      is-glob: 4.0.3
+      jiti: 1.18.2
+      lilconfig: 2.1.0
+      micromatch: 4.0.5
+      normalize-path: 3.0.0
+      object-hash: 3.0.0
+      picocolors: 1.0.0
+      postcss: 8.4.22
+      postcss-import: 14.1.0(postcss@8.4.22)
+      postcss-js: 4.0.1(postcss@8.4.22)
+      postcss-load-config: 3.1.4(postcss@8.4.22)
+      postcss-nested: 6.0.0(postcss@8.4.22)
+      postcss-selector-parser: 6.0.11
+      postcss-value-parser: 4.2.0
+      quick-lru: 5.1.1
+      resolve: 1.22.2
+      sucrase: 3.32.0
+    transitivePeerDependencies:
+      - ts-node
     dev: true
 
   /tailwindcss@3.3.1(postcss@8.4.22)(ts-node@10.9.1):

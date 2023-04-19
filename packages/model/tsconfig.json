@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@nitic-astronomy/tsconfig/tsconfig.node.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "composite": true,
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "declarationMap": true,
+    "ignoreDeprecations": "5.0",
+    "lib": ["dom", "dom.iterable", "es2022"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "rootDir": "./"
+  },
+  "include": ["**/*"],
+  "exclude": ["**/node_modules/**/*", "*.js"]
+}
