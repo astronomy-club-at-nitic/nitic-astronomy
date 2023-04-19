@@ -1,9 +1,16 @@
+import type { Metadata } from 'next';
 import type { FC } from 'react';
 
-const RootPage: FC = () => (
+type ArticlePageParams = {
+  articleId: string;
+};
+
+const ArticlePage: FC<{
+  params: ArticlePageParams;
+}> = ({ params }) => (
   <div className="flex min-h-screen flex-col items-center justify-center gap-4 text-keyplate-12">
     <article className="flex max-w-2xl flex-col gap-4 p-6">
-      <h1 className="my-6 font-main text-5xl font-bold text-keyplate-12">天文部へようこそ！</h1>
+      <h1 className="my-6 font-main text-5xl font-bold text-keyplate-12">記事: {params.articleId}</h1>
       <section className="font-main">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -32,4 +39,14 @@ const RootPage: FC = () => (
   </div>
 );
 
-export default RootPage;
+export default ArticlePage;
+
+export const revalidate = 60;
+
+export const generateMetadata = async ({ params }: { params: ArticlePageParams }): Promise<Metadata> => {
+  const metadata: Metadata = {
+    title: `記事: ${params.articleId}`,
+  };
+
+  return metadata;
+};
