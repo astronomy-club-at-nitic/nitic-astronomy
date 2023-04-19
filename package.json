@@ -8,7 +8,7 @@
     "node": ">=18.0.0 <19",
     "pnpm": ">=7.0.0"
   },
-  "packageManager": "pnpm@8.3.0",
+  "packageManager": "pnpm@8.3.1",
   "volta": {
     "node": "18.16.0"
   },
@@ -26,7 +26,7 @@
     "cms": "pnpm --filter @nitic-astronomy/cms"
   },
   "devDependencies": {
-    "@types/jest": "29.5.0",
+    "@types/jest": "29.5.1",
     "@types/node": "18.15.11",
     "@types/uuid": "9.0.1",
     "cross-env": "7.0.3",
