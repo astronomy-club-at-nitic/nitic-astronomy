@@ -4,8 +4,8 @@ import { fontFamily } from '@/core/font/family.font';
 import { ContextProvider } from '@/core/provider/context.provider';
 import { PageTransitionAnimationProvider } from '@/core/provider/page-transition-animation.provider';
 import { ThemeProvider } from '@/core/provider/theme.provider';
-import { Footer } from '@/module/root/ui/footer.layout';
-import { Header } from '@/module/root/ui/header.layout';
+import { Footer } from '@/module/root/ui/layout/footer';
+import { Header } from '@/module/root/ui/layout/header';
 import '@/style/global.css';
 
 type RootLayoutProps = {
@@ -20,7 +20,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
     <html lang="ja" suppressHydrationWarning>
       <head />
       <body
-        className={`${fontFamily} flex min-h-screen flex-col bg-slate-2 font-sans scrollbar-thin scrollbar-track-transparent scrollbar-thumb-keyplate-6 scrollbar-thumb-rounded-full hover:scrollbar-thumb-keyplate-7`}
+        className={`${fontFamily} flex min-h-screen flex-col bg-slate-2 font-main scrollbar-thin scrollbar-track-transparent scrollbar-thumb-keyplate-6 scrollbar-thumb-rounded-full hover:scrollbar-thumb-keyplate-7`}
       >
         <ThemeProvider attribute="data-theme">
           <Header />

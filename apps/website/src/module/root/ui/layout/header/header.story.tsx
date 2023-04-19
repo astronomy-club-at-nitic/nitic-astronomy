@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Header } from './header.layout';
+import { Header } from './header.presenter';
 
 type Story = StoryObj<typeof Header>;
 
