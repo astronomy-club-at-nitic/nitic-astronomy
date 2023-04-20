@@ -4,6 +4,12 @@
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     "exactOptionalPropertyTypes": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "~cms/*": ["../cms/src/*"],
+      "~model/*": ["../model/src/*"]
+    },
+    "rootDir": "./"
   }
 }
