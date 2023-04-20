@@ -9,9 +9,6 @@
     "declarationMap": true,
     "ignoreDeprecations": "5.0",
     "lib": ["dom", "dom.iterable", "es2022"],
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "rootDir": "./"
   },
   "include": ["**/*"],
