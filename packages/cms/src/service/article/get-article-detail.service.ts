@@ -1,8 +1,8 @@
-import type { ArticleDetail } from '@nitic-astronomy/model';
-import { convertArticleDetail } from '@/converter/article.converter';
-import { client } from '@/infra/client.factory';
-import type { MicroCmsArticle } from '@/infra/microcms.type';
-import { MicroCmsApiEndpoint } from '@/infra/microcms.type';
+import type { ArticleDetail } from '~model/model/article.model';
+import { convertArticleDetail } from '~cms/converter/article.converter';
+import { client } from '~cms/infra/client.factory';
+import type { MicroCmsArticle } from '~cms/infra/microcms.type';
+import { MicroCmsApiEndpoint } from '~cms/infra/microcms.type';
 
 export type GetArticleDetailQuery = {
   id: ArticleDetail['id'];

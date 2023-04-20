@@ -1,8 +1,8 @@
 import type { Article } from '@nitic-astronomy/model';
 import type { MicroCMSQueries } from 'microcms-js-sdk';
-import { client } from '@/infra/client.factory';
-import type { MicroCmsArticle } from '@/infra/microcms.type';
-import { MicroCmsApiEndpoint } from '@/infra/microcms.type';
+import { client } from '~cms/infra/client.factory';
+import type { MicroCmsArticle } from '~cms/infra/microcms.type';
+import { MicroCmsApiEndpoint } from '~cms/infra/microcms.type';
 
 export type GetArticleIdsResponse = {
   articleIds: Array<Article['id']>;
