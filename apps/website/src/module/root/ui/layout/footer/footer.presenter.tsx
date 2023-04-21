@@ -21,20 +21,22 @@ export const Footer: FC<FooterProps> = ({ isSm, ...props }) => (
         <ul className="flex flex-col gap-3 py-3 font-bold text-slate-light-11">
           <li className="flex items-center gap-1">
             <RxTwitterLogo />
-            Twitter <Link href="https://twitter.com/nitic_astronomy">@nitic_astronomy</Link>
+            Twitter <Link href={new URL('https://twitter.com/nitic_astronomy')}>@nitic_astronomy</Link>
           </li>
           <li className="flex items-center gap-1">
             <RxInstagramLogo />
-            Instagram <Link href="https://www.instagram.com/nitic_astronomy/">@nitic_astronomy</Link>
+            Instagram <Link href={new URL('https://www.instagram.com/nitic_astronomy/')}>@nitic_astronomy</Link>
           </li>
           <li className="flex items-center gap-1">
             <RxNotionLogo />
             Notionで
-            <Link href="https://nitic-astronomy.notion.site/Astronomy-Club-at-NITIC-a2ada4c005d647dd866767a69570e1a2">天文部の概要を知る</Link>
+            <Link href={new URL('https://nitic-astronomy.notion.site/Astronomy-Club-at-NITIC-a2ada4c005d647dd866767a69570e1a2')}>
+              天文部の概要を知る
+            </Link>
           </li>
           <li className="flex items-center gap-1">
             <RxGithubLogo />
-            GitHubで<Link href="https://github.com/astronomy-club-at-nitic">天文部の取り組みを見る</Link>
+            GitHubで<Link href={new URL('https://github.com/astronomy-club-at-nitic')}>天文部の取り組みを見る</Link>
           </li>
         </ul>
       </div>
