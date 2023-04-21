@@ -1,12 +1,12 @@
 import NextLink from 'next/link';
-import { ComponentPropsWithRef, forwardRef, ForwardRefExoticComponent } from 'react';
+import type { ComponentPropsWithoutRef, FC } from 'react';
 
-type LinkProps = ComponentPropsWithRef<typeof NextLink>;
+type LinkProps = ComponentPropsWithoutRef<typeof NextLink>;
 
-export const Link: ForwardRefExoticComponent<LinkProps> = forwardRef<HTMLAnchorElement, Omit<LinkProps, 'ref'>>(({ children, ...props }, ref) => (
-  <NextLink ref={ref} className="underline" {...props}>
+export const Link: FC<LinkProps> = ({ children, ...props }) => (
+  <NextLink className="underline" {...props}>
     {children}
   </NextLink>
-));
+);
 
 Link.displayName = 'Link';
