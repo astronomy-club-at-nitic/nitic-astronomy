@@ -1,9 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  // https://github.com/tsconfig/bases/blob/main/bases/next-strictest.json
-  "extends": "@tsconfig/next-strictest/tsconfig.json",
+  // Using recommended tsconfig presets:
+  // https://github.com/tsconfig/bases
+  // The latter entries override the former entries.
+  // The multiple extends syntax is supported in TypeScript 5.0+:
+  // https://devblogs.microsoft.com/typescript/announcing-typescript-5-0-rc/#supporting-multiple-configuration-files-in-extends
+  "extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/next/tsconfig.json"],
   "compilerOptions": {
     "allowJs": false,
+    // Checking .js files has to be disabled when allowJs is disabled.
+    // Otherwise, `next build` will fail due to type check error for .js files.
+    "checkJs": false,
     "exactOptionalPropertyTypes": false,
     "experimentalDecorators": true
   }

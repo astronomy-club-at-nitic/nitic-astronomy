@@ -295,13 +295,10 @@ importers:
       '@nitic-astronomy/prettier':
         specifier: workspace:*
         version: link:../prettier
-      '@tsconfig/next-strictest':
-        specifier: 1.0.1
-        version: 1.0.1
-      '@tsconfig/node-lts-strictest':
-        specifier: 18.12.1
-        version: 18.12.1
-      '@tsconfig/node-lts-strictest-esm':
+      '@tsconfig/next':
+        specifier: 1.0.5
+        version: 1.0.5
+      '@tsconfig/node-lts':
         specifier: 18.12.1
         version: 18.12.1
       '@tsconfig/strictest':
@@ -3801,19 +3798,12 @@ packages:
     engines: {node: '>= 10'}
     dev: true
 
-  /@tsconfig/next-strictest@1.0.1:
-    resolution: {integrity: sha512-TchRkSPpfgXA4v5kKIPGZDatVNSHD92VJSVRDnKfQcUAml6Efn9KJbX+hxQcfzTwrnJHkdj0c7eE9PNSew0B4A==}
-    deprecated: TypeScript 5.0 supports combining TSConfigs using array syntax in extends
+  /@tsconfig/next@1.0.5:
+    resolution: {integrity: sha512-ZpAlWqSGE3ZWFqKmI3FiQEu8WcBF3uii1z1ovedMcALflsRoJnExp3YzWQ/fU7lzGmYtfX1CWFpf1Gl8aEC6GQ==}
     dev: true
 
-  /@tsconfig/node-lts-strictest-esm@18.12.1:
-    resolution: {integrity: sha512-LvBLmaC6Q/txTddLc11OeMHF9XjJFzlilkETJuvBlUvHy9pPiMsoH3nxWZM1FMSO53zp4mJP6gzOzxKEq0me7Q==}
-    deprecated: TypeScript 5.0 supports combining TSConfigs using array syntax in extends
-    dev: true
-
-  /@tsconfig/node-lts-strictest@18.12.1:
-    resolution: {integrity: sha512-pn6cefRFlBVSEo5lO82bJnGmaptr90Wu8zCROkMUYXEz0f4AgCD65Guhq4u3PIuIlsYImaOmdoiHajx1gVTiQw==}
-    deprecated: TypeScript 5.0 supports combining TSConfigs using array syntax in extends
+  /@tsconfig/node-lts@18.12.1:
+    resolution: {integrity: sha512-UkIaMWDwJ+qJX/os8lzYh7m47qQJY7sIp1WZiEStASrpzczp27+jA0fJES+IjnS2OlDDLeBghNrVkKw8iYIRdA==}
     dev: true
 
   /@tsconfig/node10@1.0.9:

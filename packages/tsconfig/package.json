@@ -15,9 +15,8 @@
   },
   "devDependencies": {
     "@nitic-astronomy/prettier": "workspace:*",
-    "@tsconfig/next-strictest": "1.0.1",
-    "@tsconfig/node-lts-strictest": "18.12.1",
-    "@tsconfig/node-lts-strictest-esm": "18.12.1",
+    "@tsconfig/next": "1.0.5",
+    "@tsconfig/node-lts": "18.12.1",
     "@tsconfig/strictest": "2.0.1",
     "eslint-config-nitic-astronomy-base": "workspace:*"
   }

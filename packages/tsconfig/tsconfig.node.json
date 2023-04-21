@@ -1,7 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  // https://github.com/tsconfig/bases/blob/main/bases/node-lts-strictest.combined.json
-  "extends": "@tsconfig/node-lts-strictest/tsconfig.json",
+  // Using recommended tsconfig presets:
+  // https://github.com/tsconfig/bases
+  // The latter entries override the former entries.
+  // The multiple extends syntax is supported in TypeScript 5.0+:
+  // https://devblogs.microsoft.com/typescript/announcing-typescript-5-0-rc/#supporting-multiple-configuration-files-in-extends
+  "extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/node-lts/tsconfig.json"],
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "exactOptionalPropertyTypes": false,
