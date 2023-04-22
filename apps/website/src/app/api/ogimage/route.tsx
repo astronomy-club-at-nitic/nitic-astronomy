@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { ImageResponse } from '@vercel/og';
 import { z } from 'zod';
 
@@ -13,15 +15,24 @@ const OgPropsSchema = z.object({
   authorcount: z.preprocess((input) => Number(input), z.number().positive()).optional(), // Only used when `authorname` is set, and itself is greater than 1
 });
 
+// For `edge` environments:
+
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
-const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
-const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
+// const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
 
 // Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
 // const getOgTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
 // const getCoverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
 // const getAuthorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
-// Avoiding using cache for now since the size of edge functions is limited to 1MB
+
+// For `nodejs` environments:
+
+const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
+
+// Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
+const getFont = fs.promises.readFile(path.join(fileURLToPath(import.meta.url), '../../../../core/font/NotoSansJP/NotoSansJP-Bold.woff'));
+
+// Local static images:
 const getOgTemplateImage = Promise.resolve(domain + '/og/og-template.png');
 const getCoverPlaceholderImage = Promise.resolve(domain + '/og/cover-placeholder.jpg');
 const getAuthorIconPlaceholderImage = Promise.resolve(domain + '/telescope.png');
