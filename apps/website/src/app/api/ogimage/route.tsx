@@ -27,7 +27,7 @@ const getCoverPlaceholderImage = Promise.resolve(domain + '/og/cover-placeholder
 const getAuthorIconPlaceholderImage = Promise.resolve(domain + '/telescope.png');
 
 // Segment configs: https://beta.nextjs.org/docs/api-reference/segment-config
-export const runtime = 'edge';
+export const runtime = 'nodejs'; // TODO: Use `edge` once you have a pro plan (2MB Edge Functions)
 export const revalidate = 86400; // 1 day, since url parameters completely determine output.
 
 // Example URL: http://localhost:3000/api/ogimage?title=%E3%81%93%E3%81%AEOG%E7%94%BB%E5%83%8F%E3%81%AFEdge%E3%81%A7%E5%8B%95%E7%9A%84%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%F0%9F%A4%AF&authorname=ReoHakase&authorrole=%E5%9C%B0%E4%B8%8A%E6%9C%80%E5%BC%B7%E3%81%AE%E6%89%8D%E8%89%B2%E5%85%BC%E5%82%99&authorcount=666&authoricon=https://avatars.githubusercontent.com/u/16751535?v=4&cover=https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80
