@@ -15,12 +15,15 @@ const OgPropsSchema = z.object({
 });
 
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
-const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.ttf', import.meta.url)).then((res) => res.arrayBuffer());
+const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.otf', import.meta.url)).then((res) => res.arrayBuffer());
 
 // Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
 const getOgTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
-const getCoverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
-const getAuthorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
+// const getCoverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
+// const getAuthorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
+// Avoiding using cache for now since the size of edge functions is limited to 1MB
+const getCoverPlaceholderImage = Promise.resolve('/og/cover-placeholder.jpg');
+const getAuthorIconPlaceholderImage = Promise.resolve('/telescope.png');
 
 // Segment configs: https://beta.nextjs.org/docs/api-reference/segment-config
 export const runtime = 'edge';
