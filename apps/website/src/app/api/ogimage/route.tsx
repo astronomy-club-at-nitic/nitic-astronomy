@@ -2,16 +2,15 @@
 /* eslint-disable jsx-a11y/alt-text */
 
 import { ImageResponse } from '@vercel/og';
-import { z } from 'zod';
 
-const OgPropsSchema = z.object({
-  title: z.string().min(1).default('茨城高専 天文部へようこそ'),
-  cover: z.string().url().optional(),
-  authoricon: z.string().url().optional(), // Only used when `authorname` is set
-  authorname: z.string().min(1).optional(),
-  authorrole: z.string().min(1).optional(), // Only used when `authorname` is set
-  authorcount: z.preprocess((input) => Number(input), z.number().positive()).optional(), // Only used when `authorname` is set, and itself is greater than 1
-});
+type OgProps = {
+  title: string;
+  cover?: string;
+  authoricon?: string;
+  authorname?: string;
+  authorrole?: string;
+  authorcount?: number;
+};
 
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
 const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
@@ -36,7 +35,15 @@ export async function GET(request: Request) {
   try {
     // Parse parameters
     const { searchParams } = new URL(request.url);
-    const props = OgPropsSchema.parse(Object.fromEntries(searchParams.entries()));
+    const paramObject = Object.fromEntries(searchParams.entries());
+    const props: OgProps = {
+      title: paramObject['title'] || '茨城高専 天文部へようこそ',
+      cover: paramObject['cover'],
+      authoricon: paramObject['authoricon'],
+      authorname: paramObject['authorname'],
+      authorrole: paramObject['authorrole'],
+      authorcount: paramObject['authorcount'] ? parseInt(paramObject['authorcount']) : undefined,
+    };
 
     // Load assets (will be cached)
     const ogTemplateImage = await getOgTemplateImage;
