@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 
 import { ImageResponse } from '@vercel/og';
-import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
 const OgPropsSchema = z.object({
@@ -18,10 +17,11 @@ const OgPropsSchema = z.object({
 const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.otf', import.meta.url)).then((res) => res.arrayBuffer());
 
 // Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-const getOgTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
+// const getOgTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
 // const getCoverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
 // const getAuthorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
 // Avoiding using cache for now since the size of edge functions is limited to 1MB
+const getOgTemplateImage = Promise.resolve('/og/og-template.png');
 const getCoverPlaceholderImage = Promise.resolve('/og/cover-placeholder.jpg');
 const getAuthorIconPlaceholderImage = Promise.resolve('/telescope.png');
 
@@ -219,7 +219,7 @@ export async function GET(request: Request) {
     );
   } catch (error) {
     console.error('Failed to generate an open graph image', error, request);
-    return new NextResponse(`Failed to generate an open graph image:\n ${error}`, {
+    return new Response(`Failed to generate an open graph image:\n ${error}`, {
       status: 500,
     });
   }
