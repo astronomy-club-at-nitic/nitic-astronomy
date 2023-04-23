@@ -131,7 +131,7 @@ export async function GET(request: Request) {
               }}
             />
           </div>
-          <h1
+          <p
             style={{
               margin: 0,
               padding: 0,
@@ -147,7 +147,7 @@ export async function GET(request: Request) {
             }}
           >
             {title}
-          </h1>
+          </p>
           {shouldRenderAuthor && (
             <div
               style={{
@@ -162,7 +162,7 @@ export async function GET(request: Request) {
               }}
             >
               <img width={96} height={96} src={authoricon as unknown as string} style={{ borderRadius: '50%', border: '4px solid #F1F3F5' }} />
-              <hgroup
+              <div
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -170,14 +170,14 @@ export async function GET(request: Request) {
                   alignItems: 'flex-start',
                 }}
               >
-                <h2
+                <p
                   style={{
                     margin: 0,
                     fontSize: 32,
                   }}
                 >
                   {authorname}
-                </h2>
+                </p>
                 <p
                   style={{
                     margin: 0,
@@ -187,9 +187,9 @@ export async function GET(request: Request) {
                 >
                   {authorrole}
                 </p>
-              </hgroup>
+              </div>
               {shouldRenderAuthorCount && (
-                <span
+                <p
                   style={{
                     margin: 0,
                     padding: '24px 16px',
@@ -200,7 +200,7 @@ export async function GET(request: Request) {
                   }}
                 >
                   +{authorcount}名
-                </span>
+                </p>
               )}
             </div>
           )}
