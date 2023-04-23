@@ -26,7 +26,7 @@ const ASSETS = {
 } as const satisfies Record<string, string>;
 
 // Segment configs: https://beta.nextjs.org/docs/api-reference/segment-config
-export const runtime = 'nodejs'; // TODO: Use `edge` once you have a pro plan (2MB Edge Functions)
+export const runtime = 'edge'; // TODO: Use `edge` once you have a pro plan (2MB Edge Functions)
 export const dynamic = 'force-dynamic';
 export const revalidate = 86400; // 1 day, since url parameters completely determine output.
 
@@ -38,10 +38,10 @@ export async function GET(request: Request) {
   const props: OgProps = {
     title: searchParams.get('title') || '茨城高専 天文部へようこそ',
     cover: searchParams.get('cover') || ASSETS.COVER_PLACEHOLDER,
-    authoricon: searchParams.get('authoricon') || ASSETS.TELESCOPE,
-    authorname: searchParams.get('authorname') || undefined,
-    authorrole: searchParams.get('authorrole') || undefined,
-    authorcount: searchParams.get('authorcount') ? Number(searchParams.get('authorcount')) : undefined,
+    // authoricon: searchParams.get('authoricon') || ASSETS.TELESCOPE,
+    // authorname: searchParams.get('authorname') || undefined,
+    // authorrole: searchParams.get('authorrole') || undefined,
+    // authorcount: searchParams.get('authorcount') ? Number(searchParams.get('authorcount')) : undefined,
   };
 
   // Render an open graph image using Satori
