@@ -39,12 +39,12 @@ export default async function handler(request: Request) {
     const { searchParams } = new URL(request.url);
     const paramObject = Object.fromEntries(searchParams.entries());
     const props: OgProps = {
-      title: paramObject.title || '茨城高専 天文部へようこそ',
-      cover: paramObject.cover,
-      authoricon: paramObject.authoricon,
-      authorname: paramObject.authorname,
-      authorrole: paramObject.authorrole,
-      authorcount: paramObject.authorcount ? Number(paramObject.authorcount) : undefined,
+      title: paramObject['title'] || '茨城高専 天文部へようこそ',
+      cover: paramObject['cover'],
+      authoricon: paramObject['authoricon'],
+      authorname: paramObject['authorname'],
+      authorrole: paramObject['authorrole'],
+      authorcount: paramObject['authorcount'] ? Number(paramObject['authorcount']) : undefined,
     };
 
     // Load assets (will be cached)
