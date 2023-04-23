@@ -45,6 +45,7 @@ export const revalidate = 86400; // 1 day, since url parameters completely deter
 
 export async function GET(request: Request) {
   try {
+    console.log('\n@@@@@\nHey next build, can you see me? I am a console.log() in the first line of try block!\n@@@@@\n');
     // Parse parameters
     const { searchParams } = new URL(request.url);
     const props = OgPropsSchema.parse(Object.fromEntries(searchParams.entries()));
