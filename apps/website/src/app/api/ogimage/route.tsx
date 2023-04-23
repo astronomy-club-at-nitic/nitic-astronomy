@@ -6,8 +6,8 @@ import { ImageResponse } from '@vercel/og';
 
 type OgProps = {
   title: string;
-  cover?: string;
-  authoricon?: string;
+  cover: string | Promise<ArrayBuffer>;
+  authoricon: string | Promise<ArrayBuffer>;
   authorname?: string;
   authorrole?: string;
   authorcount?: number;
@@ -19,17 +19,21 @@ type OgProps = {
 
 // For `edge` environments:
 // Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-const ogTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
-// const coverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
-// const authorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
+const ogTemplateImageArrayBufferPromise = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
+const coverPlaceholderImageArrayBufferPromise = fetch(new URL('../../../../public/og/cover-placeholder.png', import.meta.url)).then((res) =>
+  res.arrayBuffer(),
+);
+const authorIconPlaceholderImageArrayBufferPromise = fetch(new URL('../../../../public/og/authoricon-placeholder.png', import.meta.url)).then((res) =>
+  res.arrayBuffer(),
+);
 
 // Static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-const ASSETS = {
-  // TEMPLATE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/og-template.png',
-  COVER_PLACEHOLDER: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/cover-placeholder.jpg',
-  COVER_ERROR: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/cover-error.jpg',
-  TELESCOPE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/telescope.png',
-} as const satisfies Record<string, string>;
+// const ASSETS = {
+//   TEMPLATE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/og-template.png',
+//   COVER_PLACEHOLDER: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/cover-placeholder.jpg',
+//   COVER_ERROR: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/cover-error.jpg',
+//   TELESCOPE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/telescope.png',
+// } as const satisfies Record<string, string>;
 
 // Segment configs: https://beta.nextjs.org/docs/api-reference/segment-config
 export const runtime = 'edge'; // TODO: Use `edge` once you have a pro plan (2MB Edge Functions)
@@ -43,8 +47,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const props: OgProps = {
     title: searchParams.get('title') || '茨城高専 天文部へようこそ',
-    cover: searchParams.get('cover') || ASSETS.COVER_PLACEHOLDER,
-    // authoricon: searchParams.get('authoricon') || ASSETS.TELESCOPE,
+    cover: searchParams.get('cover') || coverPlaceholderImageArrayBufferPromise,
+    authoricon: searchParams.get('authoricon') || authorIconPlaceholderImageArrayBufferPromise,
     // authorname: searchParams.get('authorname') || undefined,
     // authorrole: searchParams.get('authorrole') || undefined,
     // authorcount: searchParams.get('authorcount') ? Number(searchParams.get('authorcount')) : undefined,
@@ -72,7 +76,7 @@ export async function GET(request: Request) {
           height={640}
           // `img.src` accepts ArrayBuffer as well as string
           // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-          src={ogTemplateImage as unknown as string}
+          src={(await ogTemplateImageArrayBufferPromise) as unknown as string}
           style={{
             position: 'absolute',
             inset: 0,
@@ -95,7 +99,7 @@ export async function GET(request: Request) {
             height={525}
             // `img.src` accepts ArrayBuffer as well as string
             // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-            src={props.cover}
+            src={props.cover as unknown as string}
             style={{
               position: 'absolute',
               inset: 0,
@@ -123,7 +127,7 @@ export async function GET(request: Request) {
             height={525}
             // `img.src` accepts ArrayBuffer as well as string
             // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-            src={props.cover}
+            src={props.cover as unknown as string}
             style={{
               boxShadow: '3.56672px 3.56672px 57.0675px rgba(77, 27, 117, 0.1), inset 3.56672px 3.56672px 28.5338px rgba(255, 255, 255, 0.25)',
             }}
@@ -158,7 +162,14 @@ export async function GET(request: Request) {
             alignItems: 'center',
           }}
         >
-          <img width={96} height={96} src={props.authoricon} style={{ borderRadius: '50%', border: '4px solid #F1F3F5' }} />
+          <img
+            width={96}
+            height={96}
+            // `img.src` accepts ArrayBuffer as well as string // Refer:
+            // https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
+            src={props.authoricon as unknown as string}
+            style={{ borderRadius: '50%', border: '4px solid #F1F3F5' }}
+          />
           <div
             style={{
               display: 'flex',
