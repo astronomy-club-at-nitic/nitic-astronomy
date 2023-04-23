@@ -6,11 +6,11 @@ import { ImageResponse } from '@vercel/og';
 
 type OgProps = {
   title: string;
-  cover?: string;
-  authoricon?: string;
-  authorname?: string;
-  authorrole?: string;
-  authorcount?: number;
+  // cover?: string;
+  // authoricon?: string;
+  // authorname?: string;
+  // authorrole?: string;
+  // authorcount?: number;
 };
 
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
@@ -39,11 +39,11 @@ export default async function handler(request: Request) {
     const { searchParams } = new URL(request.url);
     const props: OgProps = {
       title: searchParams.get('title') || '茨城高専 天文部へようこそ',
-      cover: searchParams.get('cover') || undefined,
-      authoricon: searchParams.get('authoricon') || undefined,
-      authorname: searchParams.get('authorname') || undefined,
-      authorrole: searchParams.get('authorrole') || undefined,
-      authorcount: searchParams.get('authorcount') ? Number(searchParams.get('authorcount')) : undefined,
+      // cover: searchParams.get('cover') || undefined,
+      // authoricon: searchParams.get('authoricon') || undefined,
+      // authorname: searchParams.get('authorname') || undefined,
+      // authorrole: searchParams.get('authorrole') || undefined,
+      // authorcount: searchParams.get('authorcount') ? Number(searchParams.get('authorcount')) : undefined,
     };
 
     // Load assets (will be cached)
@@ -53,9 +53,9 @@ export default async function handler(request: Request) {
     // const font = await getFont;
 
     // Define aliases
-    const title = props.title.length > 32 ? `${props.title.slice(0, 31)}…` : props.title;
-    const cover = props.cover || coverPlaceholderImage;
-    const authoricon = props.authoricon || authorIconPlaceholderImage;
+    const title = props.title;
+    const cover = coverPlaceholderImage;
+    const authoricon = authorIconPlaceholderImage;
     // const { authorname, authorrole, authorcount } = props;
     // const shouldRenderAuthor = !!authorname;
     // const shouldRenderAuthorCount = shouldRenderAuthor && !!authorcount && authorcount > 1;
