@@ -22,9 +22,9 @@ const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCE
 // const getCoverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
 // const getAuthorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
 // Avoiding using cache for now since the size of edge functions is limited to 1MB
-const getOgTemplateImage = Promise.resolve(new URL('/og/og-template.png', domain));
-const getCoverPlaceholderImage = Promise.resolve(new URL('/og/cover-placeholder.jpg', domain));
-const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain));
+const getOgTemplateImage = Promise.resolve(new URL('/og/og-template.png', domain).href);
+const getCoverPlaceholderImage = Promise.resolve(new URL('/og/cover-placeholder.jpg', domain).href);
+const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain).href);
 
 // Segment configs: https://beta.nextjs.org/docs/api-reference/segment-config
 export const runtime = 'edge';
