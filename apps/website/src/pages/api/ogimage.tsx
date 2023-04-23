@@ -4,14 +4,14 @@
 
 import { ImageResponse } from '@vercel/og';
 
-// type OgProps = {
-//   title: string;
-//   cover?: string;
-//   authoricon?: string;
-//   authorname?: string;
-//   authorrole?: string;
-//   authorcount?: number;
-// };
+type OgProps = {
+  title: string;
+  cover?: string;
+  authoricon?: string;
+  authorname?: string;
+  authorrole?: string;
+  authorcount?: number;
+};
 
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
 const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
@@ -23,8 +23,8 @@ const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCE
 // const getAuthorIconPlaceholderImage = fetch(new URL('../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
 // Avoiding using cache for now since the size of edge functions is limited to 1MB
 const getOgTemplateImage = Promise.resolve(new URL('/og/og-template.png', domain).href);
-// const getCoverPlaceholderImage = Promise.resolve(new URL('/og/cover-placeholder.jpg', domain).href);
-// const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain).href);
+const getCoverPlaceholderImage = Promise.resolve(new URL('/og/cover-placeholder.jpg', domain).href);
+const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain).href);
 
 // Segment configs:
 export const config = {
@@ -36,27 +36,27 @@ export const config = {
 export default async function handler(request: Request) {
   try {
     // Parse parameters
-    // const { searchParams } = new URL(request.url);
-    // const paramObject = Object.fromEntries(searchParams.entries());
-    // const props: OgProps = {
-    //   title: paramObject['title'] || '茨城高専 天文部へようこそ',
-    //   cover: paramObject['cover'],
-    //   authoricon: paramObject['authoricon'],
-    //   authorname: paramObject['authorname'],
-    //   authorrole: paramObject['authorrole'],
-    //   authorcount: paramObject['authorcount'] ? Number(paramObject['authorcount']) : undefined,
-    // };
+    const { searchParams } = new URL(request.url);
+    const paramObject = Object.fromEntries(searchParams.entries());
+    const props: OgProps = {
+      title: paramObject['title'] || '茨城高専 天文部へようこそ',
+      cover: paramObject['cover'],
+      authoricon: paramObject['authoricon'],
+      authorname: paramObject['authorname'],
+      authorrole: paramObject['authorrole'],
+      authorcount: paramObject['authorcount'] ? Number(paramObject['authorcount']) : undefined,
+    };
 
     // Load assets (will be cached)
     const ogTemplateImage = await getOgTemplateImage;
-    // const coverPlaceholderImage = await getCoverPlaceholderImage;
-    // const authorIconPlaceholderImage = await getAuthorIconPlaceholderImage;
+    const coverPlaceholderImage = await getCoverPlaceholderImage;
+    const authorIconPlaceholderImage = await getAuthorIconPlaceholderImage;
     // const font = await getFont;
 
     // Define aliases
-    // const title = props.title.length > 32 ? `${props.title.slice(0, 31)}…` : props.title;
-    // const cover = props.cover || coverPlaceholderImage;
-    // const authoricon = props.authoricon || authorIconPlaceholderImage;
+    const title = props.title.length > 32 ? `${props.title.slice(0, 31)}…` : props.title;
+    const cover = props.cover || coverPlaceholderImage;
+    const authoricon = props.authoricon || authorIconPlaceholderImage;
     // const { authorname, authorrole, authorcount } = props;
     // const shouldRenderAuthor = !!authorname;
     // const shouldRenderAuthorCount = shouldRenderAuthor && !!authorcount && authorcount > 1;
@@ -106,9 +106,7 @@ export default async function handler(request: Request) {
               height={525}
               // `img.src` accepts ArrayBuffer as well as string
               // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-              src={
-                'https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
-              }
+              src={cover}
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -136,9 +134,7 @@ export default async function handler(request: Request) {
               height={525}
               // `img.src` accepts ArrayBuffer as well as string
               // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-              src={
-                'https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
-              }
+              src={cover}
               style={{
                 boxShadow: '3.56672px 3.56672px 57.0675px rgba(77, 27, 117, 0.1), inset 3.56672px 3.56672px 28.5338px rgba(255, 255, 255, 0.25)',
               }}
@@ -159,7 +155,7 @@ export default async function handler(request: Request) {
               lineClamp: 2,
             }}
           >
-            こんにちは世界！
+            {title}
           </p>
           <div
             style={{
@@ -173,12 +169,7 @@ export default async function handler(request: Request) {
               alignItems: 'center',
             }}
           >
-            <img
-              width={96}
-              height={96}
-              src={'https://avatars.githubusercontent.com/u/16751535?v=4'}
-              style={{ borderRadius: '50%', border: '4px solid #F1F3F5' }}
-            />
+            <img width={96} height={96} src={authoricon} style={{ borderRadius: '50%', border: '4px solid #F1F3F5' }} />
             <div
               style={{
                 display: 'flex',
