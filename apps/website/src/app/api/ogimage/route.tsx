@@ -14,17 +14,17 @@ const OgPropsSchema = z.object({
 });
 
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
-const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
+// const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
 // const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
 
 // Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-// const getOgTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
-// const getCoverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
-// const getAuthorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
+const getOgTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
+const getCoverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
+const getAuthorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
 // Avoiding using cache for now since the size of edge functions is limited to 1MB
-const getOgTemplateImage = Promise.resolve(new URL('/og/og-template.png', domain).href);
-const getCoverPlaceholderImage = Promise.resolve(new URL('/og/cover-placeholder.jpg', domain).href);
-const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain).href);
+// const getOgTemplateImage = Promise.resolve(new URL('/og/og-template.png', domain).href);
+// const getCoverPlaceholderImage = Promise.resolve(new URL('/og/cover-placeholder.jpg', domain).href);
+// const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain).href);
 
 // Segment configs: https://beta.nextjs.org/docs/api-reference/segment-config
 export const runtime = 'edge';
