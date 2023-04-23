@@ -17,9 +17,15 @@ type OgProps = {
 // const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
 // const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
 
+// For `edge` environments:
+// Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
+const ogTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
+// const coverPlaceholderImage = fetch(new URL('../../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
+// const authorIconPlaceholderImage = fetch(new URL('../../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
+
 // Static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
 const ASSETS = {
-  TEMPLATE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/og-template.png',
+  // TEMPLATE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/og-template.png',
   COVER_PLACEHOLDER: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/cover-placeholder.jpg',
   COVER_ERROR: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/cover-error.jpg',
   TELESCOPE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/telescope.png',
@@ -66,7 +72,7 @@ export async function GET(request: Request) {
           height={640}
           // `img.src` accepts ArrayBuffer as well as string
           // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-          src={ASSETS.TEMPLATE}
+          src={ogTemplateImage as unknown as string}
           style={{
             position: 'absolute',
             inset: 0,
