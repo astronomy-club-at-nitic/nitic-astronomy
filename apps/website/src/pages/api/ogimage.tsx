@@ -6,25 +6,24 @@ import { ImageResponse } from '@vercel/og';
 
 type OgProps = {
   title: string;
-  // cover?: string;
-  // authoricon?: string;
-  // authorname?: string;
-  // authorrole?: string;
-  // authorcount?: number;
+  cover?: string;
+  authoricon?: string;
+  authorname?: string;
+  authorrole?: string;
+  authorcount?: number;
 };
 
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
-const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
+// const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
 // const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
 
-// Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-// const getOgTemplateImage = fetch(new URL('../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
-// const getCoverPlaceholderImage = fetch(new URL('../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
-// const getAuthorIconPlaceholderImage = fetch(new URL('../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
-// Avoiding using cache for now since the size of edge functions is limited to 1MB
-const getOgTemplateImage = Promise.resolve(new URL('/og/og-template.png', domain).href);
-const getCoverPlaceholderImage = Promise.resolve(new URL('/og/cover-placeholder.jpg', domain).href);
-const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain).href);
+// Static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
+const ASSETS = {
+  TEMPLATE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/og-template.png',
+  COVER_PLACEHOLDER: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/cover-placeholder.jpg',
+  COVER_ERROR: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/cover-error.jpg',
+  TELESCOPE: 'https://ehmbxashiqmqhmqojbvs.supabase.co/storage/v1/object/public/og-image/telescope.png',
+} as const satisfies Record<string, string>;
 
 // Segment configs:
 export const config = {
@@ -39,26 +38,12 @@ export default async function handler(request: Request) {
     const { searchParams } = new URL(request.url);
     const props: OgProps = {
       title: searchParams.get('title') || '茨城高専 天文部へようこそ',
-      // cover: searchParams.get('cover') || undefined,
-      // authoricon: searchParams.get('authoricon') || undefined,
-      // authorname: searchParams.get('authorname') || undefined,
-      // authorrole: searchParams.get('authorrole') || undefined,
-      // authorcount: searchParams.get('authorcount') ? Number(searchParams.get('authorcount')) : undefined,
+      cover: searchParams.get('cover') || ASSETS.COVER_PLACEHOLDER,
+      authoricon: searchParams.get('authoricon') || ASSETS.TELESCOPE,
+      authorname: searchParams.get('authorname') || undefined,
+      authorrole: searchParams.get('authorrole') || undefined,
+      authorcount: searchParams.get('authorcount') ? Number(searchParams.get('authorcount')) : undefined,
     };
-
-    // Load assets (will be cached)
-    const ogTemplateImage = await getOgTemplateImage;
-    const coverPlaceholderImage = await getCoverPlaceholderImage;
-    const authorIconPlaceholderImage = await getAuthorIconPlaceholderImage;
-    // const font = await getFont;
-
-    // Define aliases
-    const title = props.title;
-    const cover = coverPlaceholderImage;
-    const authoricon = authorIconPlaceholderImage;
-    // const { authorname, authorrole, authorcount } = props;
-    // const shouldRenderAuthor = !!authorname;
-    // const shouldRenderAuthorCount = shouldRenderAuthor && !!authorcount && authorcount > 1;
 
     // Render an open graph image using Satori
     return new ImageResponse(
@@ -82,7 +67,7 @@ export default async function handler(request: Request) {
             height={640}
             // `img.src` accepts ArrayBuffer as well as string
             // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-            src={ogTemplateImage as unknown as string}
+            src={ASSETS.TEMPLATE}
             style={{
               position: 'absolute',
               inset: 0,
@@ -105,7 +90,7 @@ export default async function handler(request: Request) {
               height={525}
               // `img.src` accepts ArrayBuffer as well as string
               // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-              src={cover}
+              src={props.cover}
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -133,7 +118,7 @@ export default async function handler(request: Request) {
               height={525}
               // `img.src` accepts ArrayBuffer as well as string
               // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-              src={cover}
+              src={props.cover}
               style={{
                 boxShadow: '3.56672px 3.56672px 57.0675px rgba(77, 27, 117, 0.1), inset 3.56672px 3.56672px 28.5338px rgba(255, 255, 255, 0.25)',
               }}
@@ -147,14 +132,14 @@ export default async function handler(request: Request) {
               top: 240,
               left: 76,
               width: 600,
-              fontSize: 64,
+              fontSize: 48,
               lineHeight: '120%',
               letterSpacing: '0.05em',
               textOverflow: 'ellipsis',
               lineClamp: 2,
             }}
           >
-            {title}
+            {props.title}
           </p>
           <div
             style={{
@@ -168,7 +153,7 @@ export default async function handler(request: Request) {
               alignItems: 'center',
             }}
           >
-            <img width={96} height={96} src={authoricon} style={{ borderRadius: '50%', border: '4px solid #F1F3F5' }} />
+            <img width={96} height={96} src={props.authoricon} style={{ borderRadius: '50%', border: '4px solid #F1F3F5' }} />
             <div
               style={{
                 display: 'flex',
