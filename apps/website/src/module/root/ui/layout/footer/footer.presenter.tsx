@@ -55,10 +55,10 @@ export const Footer: FC<FooterProps> = ({ isSm, ...props }) => (
           </li>
         </ul>
       </div>
-      <div className="py-4 text-xs font-bold text-slate-light-11">
+      <address className="py-4 text-xs font-bold text-slate-light-11">
         <p>〒312-8508 茨城県ひたちなか市中根866</p>
         <p>Tel. 029-272-5201</p>
-      </div>
+      </address>
       <small className="w-fit rounded-full bg-slate-light-3 px-2 py-1 text-xs text-slate-light-11">Copyright © 2023 Astronomy Club at NITIC</small>
     </div>
   </footer>
