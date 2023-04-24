@@ -12,10 +12,11 @@ const config = {
   content: ['./src/**/*.{ts,tsx}'],
   // Tailwind CSSのユーティリティセレクタ`dark:`に対応するCSSセレクタ
   // この場合、`dark:`は`[data-theme="dark"] `に置き換えられる
-  darkMode: ['[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
+  darkMode: ['class', '[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
   theme: {
     backgroundImage: {
-      'dot-pattern': "url('/image/background/dot-pattern.svg')",
+      'dot-pattern-light': "url('/image/background/dot-pattern-light.svg')",
+      'dot-pattern-dark': "url('/image/background/dot-pattern-dark.svg')",
     },
     colors: {
       transparent: 'transparent',
