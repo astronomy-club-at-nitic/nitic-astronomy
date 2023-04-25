@@ -1,8 +1,8 @@
 import type { Tag } from '@nitic-astronomy/model';
 import type { MicroCMSQueries } from 'microcms-js-sdk';
-import { client } from '~cms/infra/client.factory';
-import type { MicroCmsTag } from '~cms/infra/microcms.type';
-import { MicroCmsApiEndpoint } from '~cms/infra/microcms.type';
+import { client } from '#cms/infra/client.factory';
+import type { MicroCmsTag } from '#cms/infra/microcms.type';
+import { MicroCmsApiEndpoint } from '#cms/infra/microcms.type';
 
 // export type GetTagIdsQuery = never;
 

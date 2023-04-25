@@ -1,8 +1,8 @@
 import type { Tag } from '@nitic-astronomy/model';
-import { convertTag } from '~cms/converter/tag.converter';
-import { client } from '~cms/infra/client.factory';
-import type { MicroCmsTag } from '~cms/infra/microcms.type';
-import { MicroCmsApiEndpoint } from '~cms/infra/microcms.type';
+import { convertTag } from '#cms/converter/tag.converter';
+import { client } from '#cms/infra/client.factory';
+import type { MicroCmsTag } from '#cms/infra/microcms.type';
+import { MicroCmsApiEndpoint } from '#cms/infra/microcms.type';
 
 export type GetTagDetailQuery = {
   id: Tag['id'];

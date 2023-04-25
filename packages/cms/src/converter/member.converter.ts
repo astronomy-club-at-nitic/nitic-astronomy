@@ -1,5 +1,5 @@
 import type { Member } from '@nitic-astronomy/model';
-import type { MicroCmsMember } from '~cms/infra/microcms.type';
+import type { MicroCmsMember } from '#cms/infra/microcms.type';
 
 export const convertMember = (member: MicroCmsMember): Member => ({
   id: member.id,
