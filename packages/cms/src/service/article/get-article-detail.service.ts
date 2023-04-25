@@ -1,4 +1,4 @@
-import type { ArticleDetail } from '#model/model/article.model';
+import type { ArticleDetail } from '@nitic-astronomy/model';
 import { convertArticleDetail } from '#cms/converter/article.converter';
 import { client } from '#cms/infra/client.factory';
 import type { MicroCmsArticle } from '#cms/infra/microcms.type';
