@@ -9,8 +9,8 @@ const defaultConfig = {
   moduleNameMapper: {
     // Make sure this is as same as specified in tsconfig.json
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^~model/(.*)$': '<rootDir>/../model/src/$1',
-    '^~cms/(.*)$': '<rootDir>/../cms/src/$1',
+    '^#model/(.*)$': '<rootDir>/../model/src/$1',
+    '^#cms/(.*)$': '<rootDir>/../cms/src/$1',
   },
 };
 
