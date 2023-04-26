@@ -14,15 +14,16 @@ import { ImageResponse } from '@vercel/og';
 // };
 
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
-const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
+// const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
 // const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
 
 // Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-// const getOgTemplateImage = fetch(new URL('../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
+const getOgTemplateImage = fetch(new URL('../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
+const getCoverImage = fetch(new URL('../../../public/og/cover-astro.png', import.meta.url)).then((res) => res.arrayBuffer());
 // const getCoverPlaceholderImage = fetch(new URL('../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
 // const getAuthorIconPlaceholderImage = fetch(new URL('../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
 // Avoiding using cache for now since the size of edge functions is limited to 1MB
-const getOgTemplateImage = Promise.resolve(new URL('/og/og-template.png', domain).href);
+// const getOgTemplateImage = Promise.resolve(new URL('/og/og-template.png', domain).href);
 // const getCoverPlaceholderImage = Promise.resolve(new URL('/og/cover-placeholder.jpg', domain).href);
 // const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain).href);
 
@@ -36,6 +37,14 @@ export const config = {
 export default async function handler(request: Request) {
   try {
     // Parse parameters
+
+    // NOTE: Temporal solution for now
+    // Refer: https://github.com/astronomy-club-at-nitic/nitic-astronomy/issues/112
+    const { searchParams } = new URL(request.url);
+    // ?title=<title>
+    const hasTitle = searchParams.has('title');
+    const title = (hasTitle && searchParams.get('title')?.slice(0, 40)) || '茨城高専 天文部へようこそ！';
+
     // const { searchParams } = new URL(request.url);
     // const paramObject = Object.fromEntries(searchParams.entries());
     // const props: OgProps = {
@@ -49,6 +58,7 @@ export default async function handler(request: Request) {
 
     // Load assets (will be cached)
     const ogTemplateImage = await getOgTemplateImage;
+    const coverImage = await getCoverImage;
     // const coverPlaceholderImage = await getCoverPlaceholderImage;
     // const authorIconPlaceholderImage = await getAuthorIconPlaceholderImage;
     // const font = await getFont;
@@ -79,7 +89,7 @@ export default async function handler(request: Request) {
           }}
         >
           <img
-            width={1200}
+            width={480}
             height={640}
             // `img.src` accepts ArrayBuffer as well as string
             // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
@@ -87,6 +97,9 @@ export default async function handler(request: Request) {
             style={{
               position: 'absolute',
               inset: 0,
+              top: 0,
+              bottom: 0,
+              left: 0,
             }}
           />
           <div
@@ -106,9 +119,7 @@ export default async function handler(request: Request) {
               height={525}
               // `img.src` accepts ArrayBuffer as well as string
               // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-              src={
-                'https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
-              }
+              src={coverImage as unknown as string}
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -136,32 +147,40 @@ export default async function handler(request: Request) {
               height={525}
               // `img.src` accepts ArrayBuffer as well as string
               // Refer: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-              src={
-                'https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
-              }
+              src={coverImage as unknown as string}
               style={{
                 boxShadow: '3.56672px 3.56672px 57.0675px rgba(77, 27, 117, 0.1), inset 3.56672px 3.56672px 28.5338px rgba(255, 255, 255, 0.25)',
               }}
             />
           </div>
-          <p
+          <div
             style={{
-              margin: 0,
-              padding: 0,
               position: 'absolute',
-              top: 240,
               left: 76,
               width: 600,
-              fontSize: 64,
-              lineHeight: '120%',
-              letterSpacing: '0.05em',
-              textOverflow: 'ellipsis',
-              lineClamp: 2,
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'flex-start',
             }}
           >
-            こんにちは世界！
-          </p>
-          <div
+            <p
+              style={{
+                margin: 0,
+                padding: 0,
+                fontSize: title.length > 28 ? 48 : 64,
+                lineHeight: '120%',
+                letterSpacing: '0.05em',
+                textOverflow: 'ellipsis',
+                lineClamp: 2,
+              }}
+            >
+              {title}
+            </p>
+          </div>
+
+          {/* <div
             style={{
               position: 'absolute',
               display: 'flex',
@@ -202,7 +221,7 @@ export default async function handler(request: Request) {
                   color: '#687076',
                 }}
               >
-                テスト
+                会計・4年情報系
               </p>
             </div>
             <p
@@ -215,9 +234,9 @@ export default async function handler(request: Request) {
                 color: '#687076',
               }}
             >
-              +123名
+              +24名
             </p>
-          </div>
+          </div> */}
         </div>
       ),
       {
