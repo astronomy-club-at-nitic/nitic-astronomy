@@ -1,6 +1,6 @@
+import { TagSchema } from '@nitic-astronomy/model';
 import { z } from 'zod';
 import { getTags } from './get-tags.service';
-import { TagSchema } from '@/model/tag.model';
 
 describe('getTags', () => {
   test('should return tags in expected schema', async () => {

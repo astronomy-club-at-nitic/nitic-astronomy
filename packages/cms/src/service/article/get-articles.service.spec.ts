@@ -1,6 +1,6 @@
+import { ArticleSchema } from '@nitic-astronomy/model';
 import { z } from 'zod';
 import { getArticles } from './get-articles.service';
-import { ArticleSchema } from '@/model/article.model';
 
 describe('getArticles', () => {
   test('should return articles in expected schema', async () => {

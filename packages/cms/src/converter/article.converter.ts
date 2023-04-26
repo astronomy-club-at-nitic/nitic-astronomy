@@ -1,8 +1,8 @@
+import type { Article, ArticleDetail } from '@nitic-astronomy/model';
 import { convertImage } from './image.converter';
 import { convertMember } from './member.converter';
 import { convertTag } from './tag.converter';
-import type { MicroCmsArticle } from '@/infra/microcms.type';
-import type { Article, ArticleDetail } from '@/model/article.model';
+import type { MicroCmsArticle } from '#cms/infra/microcms.type';
 
 export const convertArticle = (article: MicroCmsArticle): Article => ({
   id: article.id,

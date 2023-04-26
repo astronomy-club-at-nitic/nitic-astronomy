@@ -1,5 +1,5 @@
+import { TagSchema } from '@nitic-astronomy/model';
 import { getTagDetail } from './get-tag-detail.service';
-import { TagSchema } from '@/model/tag.model';
 
 describe('getTagDetail', () => {
   test.skip('should return a tag in expected schema', async () => {
