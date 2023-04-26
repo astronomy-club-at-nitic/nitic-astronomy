@@ -156,9 +156,9 @@ export default async function handler(request: Request) {
           <div
             style={{
               position: 'absolute',
+              top: 241,
               left: 76,
               width: 600,
-              height: '100%',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -180,7 +180,7 @@ export default async function handler(request: Request) {
             </p>
           </div>
 
-          {/* <div
+          <div
             style={{
               position: 'absolute',
               display: 'flex',
@@ -192,12 +192,12 @@ export default async function handler(request: Request) {
               alignItems: 'center',
             }}
           >
-            <img
+            {/* <img
               width={96}
               height={96}
               src={'https://avatars.githubusercontent.com/u/16751535?v=4'}
               style={{ borderRadius: '50%', border: '4px solid #F1F3F5' }}
-            />
+            /> */}
             <div
               style={{
                 display: 'flex',
@@ -212,7 +212,7 @@ export default async function handler(request: Request) {
                   fontSize: 32,
                 }}
               >
-                ReoHakase
+                新入部員募集中！🌕🔭🌠
               </p>
               <p
                 style={{
@@ -221,11 +221,15 @@ export default async function handler(request: Request) {
                   color: '#687076',
                 }}
               >
-                会計・4年情報系
+                毎週水曜日に活動しています！
               </p>
             </div>
-            <p
+            <span
               style={{
+                display: 'flex',
+                alignItems: 'center',
+                alignSelf: 'normal',
+                justifyContent: 'center',
                 margin: 0,
                 padding: '24px 16px',
                 background: '#ECEEF0',
@@ -235,8 +239,8 @@ export default async function handler(request: Request) {
               }}
             >
               +24名
-            </p>
-          </div> */}
+            </span>
+          </div>
         </div>
       ),
       {
