@@ -219,6 +219,7 @@ export default async function handler(request: Request) {
                 style={{
                   margin: 0,
                   fontSize: 32,
+                  color: '#340C3B', // primary-12
                 }}
               >
                 新入部員募集中！🌕🔭🌠
@@ -227,7 +228,7 @@ export default async function handler(request: Request) {
                 style={{
                   margin: 0,
                   fontSize: 24,
-                  color: '#687076',
+                  color: '#9C2BAD', // primary-11
                 }}
               >
                 毎週水曜日に活動しています！
@@ -241,10 +242,10 @@ export default async function handler(request: Request) {
                 justifyContent: 'center',
                 margin: 0,
                 padding: '24px 16px',
-                background: '#ECEEF0',
+                background: '#FEFCFF', // primary-1
                 borderRadius: 999,
                 fontSize: 24,
-                color: '#687076',
+                color: '#9C2BAD', // primary-11
               }}
             >
               +24名
