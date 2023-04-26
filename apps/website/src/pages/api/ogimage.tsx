@@ -15,7 +15,7 @@ import { ImageResponse } from '@vercel/og';
 
 // Local custom fonts: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-custom-font
 // const domain = new URL(process.env['VERCEL_URL'] ? `https://${process.env['VERCEL_URL']}` : `http://localhost:${process.env['PORT'] || 3000}`);
-// const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
+const getFont = fetch(new URL('../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
 
 // Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
 const getOgTemplateImage = fetch(new URL('../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
@@ -61,7 +61,7 @@ export default async function handler(request: Request) {
     const coverImage = await getCoverImage;
     // const coverPlaceholderImage = await getCoverPlaceholderImage;
     // const authorIconPlaceholderImage = await getAuthorIconPlaceholderImage;
-    // const font = await getFont;
+    const font = await getFont;
 
     // Define aliases
     // const title = props.title.length > 32 ? `${props.title.slice(0, 31)}…` : props.title;
@@ -246,13 +246,13 @@ export default async function handler(request: Request) {
       {
         width: 1200,
         height: 640,
-        // fonts: [
-        // {
-        // name: 'NotoSansJP',
-        // data: font,
-        // style: 'normal',
-        // },
-        // ],
+        fonts: [
+          {
+            name: 'NotoSansJP',
+            data: font,
+            style: 'normal',
+          },
+        ],
       },
     );
   } catch (error) {
