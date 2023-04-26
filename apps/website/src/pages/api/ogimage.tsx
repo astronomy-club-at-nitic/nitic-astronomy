@@ -4,6 +4,14 @@
 
 import { ImageResponse } from '@vercel/og';
 
+// Utilities for title truncation
+// Counts the number of graphemes in a string
+const countGraphemes = (str: string): number => {
+  const segmenter = new Intl.Segmenter('ja', { granularity: 'grapheme' });
+  const segments = segmenter.segment(str);
+  return Array.from(segments).length;
+};
+
 // type OgProps = {
 //   title: string;
 //   cover?: string;
@@ -43,7 +51,8 @@ export default async function handler(request: Request) {
     const { searchParams } = new URL(request.url);
     // ?title=<title>
     const hasTitle = searchParams.has('title');
-    const title = (hasTitle && searchParams.get('title')?.slice(0, 40)) || '茨城高専 天文部へようこそ！';
+    const title = (hasTitle && searchParams.get('title')) || '茨城高専 天文部へようこそ！';
+    const displayedTitle = countGraphemes(title) > 32 ? `${title.slice(0, 31)}…` : title;
 
     // const { searchParams } = new URL(request.url);
     // const paramObject = Object.fromEntries(searchParams.entries());
@@ -169,14 +178,14 @@ export default async function handler(request: Request) {
               style={{
                 margin: 0,
                 padding: 0,
-                fontSize: title.length > 28 ? 48 : 64,
+                fontSize: countGraphemes(displayedTitle) > 16 ? 48 : 64,
                 lineHeight: '120%',
                 letterSpacing: '0.05em',
                 textOverflow: 'ellipsis',
                 lineClamp: 2,
               }}
             >
-              {title}
+              {displayedTitle}
             </p>
           </div>
 
