@@ -249,7 +249,7 @@ export default async function handler(request: Request) {
                 color: '#9C2BAD', // primary-11
               }}
             >
-              +24名
+              +25名
             </span>
           </div>
         </div>
