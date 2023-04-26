@@ -1,9 +1,8 @@
-import { convertArticle } from '@/converter/article.converter';
-import { client } from '@/infra/client.factory';
-import type { MicroCmsArticle } from '@/infra/microcms.type';
-import { MicroCmsApiEndpoint } from '@/infra/microcms.type';
-import type { Article } from '@/model/article.model';
-import type { Tag } from '@/model/tag.model';
+import type { Article, Tag } from '@nitic-astronomy/model';
+import { convertArticle } from '#cms/converter/article.converter';
+import { client } from '#cms/infra/client.factory';
+import type { MicroCmsArticle } from '#cms/infra/microcms.type';
+import { MicroCmsApiEndpoint } from '#cms/infra/microcms.type';
 
 export type GetArticlesQuery = {
   limit?: number;

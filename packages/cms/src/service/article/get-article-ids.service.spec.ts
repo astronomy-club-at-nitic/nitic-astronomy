@@ -1,6 +1,6 @@
+import { IdSchema } from '@nitic-astronomy/model';
 import { z } from 'zod';
 import { getArticleIds } from './get-article-ids.service';
-import { IdSchema } from '@/model/id.model';
 
 describe('getArticleIds', () => {
   test('should return articles in expected schema', async () => {
