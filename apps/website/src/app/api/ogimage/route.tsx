@@ -26,8 +26,8 @@ const countGraphemes = (str: string): number => {
 // const getFont = fetch(new URL('../../../core/font/NotoSansJP/NotoSansJP-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer());
 
 // Local static images: https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation/og-image-examples#using-a-local-image
-const getOgTemplateImage = fetch(new URL('../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
-const getCoverImage = fetch(new URL('../../../public/og/cover-astro.png', import.meta.url)).then((res) => res.arrayBuffer());
+const getOgTemplateImage = fetch(new URL('../../../../public/og/og-template.png', import.meta.url)).then((res) => res.arrayBuffer());
+const getCoverImage = fetch(new URL('../../../../public/og/cover-astro.png', import.meta.url)).then((res) => res.arrayBuffer());
 // const getCoverPlaceholderImage = fetch(new URL('../../../public/og/cover-placeholder.jpg', import.meta.url)).then((res) => res.arrayBuffer());
 // const getAuthorIconPlaceholderImage = fetch(new URL('../../../public/telescope.png', import.meta.url)).then((res) => res.arrayBuffer());
 // Avoiding using cache for now since the size of edge functions is limited to 1MB
@@ -36,14 +36,14 @@ const getCoverImage = fetch(new URL('../../../public/og/cover-astro.png', import
 // const getAuthorIconPlaceholderImage = Promise.resolve(new URL('/telescope.png', domain).href);
 
 // Segment configs:
-export const config = {
-  runtime: 'edge',
-};
+export const runtime = 'edge';
+export const revalidate = 60 * 60 * 24; // 24 hours
+export const dynamic = 'force-dynamic'; // Next app router fails to recognize its dynamic `request` references for now Refer: https://github.com/vercel/next.js/issues/48701
 
 // Example URL: http://localhost:3000/api/ogimage?title=%E3%81%93%E3%81%AEOG%E7%94%BB%E5%83%8F%E3%81%AFEdge%E3%81%A7%E5%8B%95%E7%9A%84%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%F0%9F%A4%AF&authorname=ReoHakase&authorrole=%E5%9C%B0%E4%B8%8A%E6%9C%80%E5%BC%B7%E3%81%AE%E6%89%8D%E8%89%B2%E5%85%BC%E5%82%99&authorcount=666&authoricon=https://avatars.githubusercontent.com/u/16751535?v=4&cover=https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80
 // http://localhost:3000/api/ogimage?title=%E2%9B%85%E6%98%8E%E6%97%A5%E3%81%AE%E7%A7%81%E3%81%AF%E4%BB%8A%E6%97%A5%E3%81%AE%E7%A7%81%E3%82%88%E3%82%8A%E3%82%82%E3%80%81%E3%81%8D%E3%81%A3%E3%81%A8%E5%84%AA%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AF%E3%81%9A%E3%81%AA%E3%81%AE%E3%81%AB%E3%80%82%E3%81%AA%E3%81%9C%E4%B8%8D%E5%AE%89%E3%81%AF%E6%8B%AD%E3%81%84%E3%81%8D%E3%82%8C%E3%81%AA%E3%81%84%E3%81%AE%EF%BC%9F
 
-export default async function handler(request: Request) {
+export async function GET(request: Request) {
   try {
     // Parse parameters
 
