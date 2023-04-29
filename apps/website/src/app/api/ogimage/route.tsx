@@ -1,7 +1,3 @@
-/* eslint-disable import/no-default-export */
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable jsx-a11y/alt-text */
-
 import { ImageResponse } from '@vercel/og';
 
 // Utilities for title truncation
