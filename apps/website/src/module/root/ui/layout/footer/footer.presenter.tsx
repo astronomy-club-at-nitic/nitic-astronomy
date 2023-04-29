@@ -55,7 +55,7 @@ export const Footer: FC<FooterProps> = ({ isSm, ...props }) => (
           </li>
         </ul>
       </div>
-      <address className="py-4 text-xs font-bold text-slate-light-11">
+      <address className="py-4 text-xs font-bold not-italic text-slate-light-11">
         <p>〒312-8508 茨城県ひたちなか市中根866</p>
         <p>Tel. 029-272-5201</p>
       </address>
