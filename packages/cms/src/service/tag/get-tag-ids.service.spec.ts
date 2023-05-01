@@ -1,6 +1,6 @@
+import { IdSchema } from '@nitic-astronomy/model';
 import { z } from 'zod';
 import { getTagIds } from './get-tag-ids.service';
-import { IdSchema } from '@/model/id.model';
 
 describe('getTagIds', () => {
   test('should return all of tag ids in expected schema', async () => {

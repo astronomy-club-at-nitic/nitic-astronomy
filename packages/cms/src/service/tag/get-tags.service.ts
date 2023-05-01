@@ -1,8 +1,8 @@
-import { convertTag } from '@/converter/tag.converter';
-import { client } from '@/infra/client.factory';
-import type { MicroCmsTag } from '@/infra/microcms.type';
-import { MicroCmsApiEndpoint } from '@/infra/microcms.type';
-import type { Tag } from '@/model/tag.model';
+import type { Tag } from '@nitic-astronomy/model';
+import { convertTag } from '#cms/converter/tag.converter';
+import { client } from '#cms/infra/client.factory';
+import type { MicroCmsTag } from '#cms/infra/microcms.type';
+import { MicroCmsApiEndpoint } from '#cms/infra/microcms.type';
 
 export type GetTagsQuery = {
   limit?: number;
