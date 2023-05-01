@@ -6,9 +6,17 @@ type Story = StoryObj<typeof Image>;
 const meta: Meta<typeof Image> = {
   component: Image,
   argTypes: {
-    sizes: {
-      description: 'Property that specifies width and height at once.',
-      control: { type: 'number' },
+    src: {
+      description: 'An url of the image.',
+      control: {
+        type: 'text',
+      },
+    },
+    alt: {
+      description: 'A text description of the image.',
+      control: {
+        type: 'text',
+      },
     },
   },
 };
@@ -17,17 +25,9 @@ export default meta;
 
 export const Default: Story = {
   args: {
-    src: '/image/logo/transparent.svg',
-    width: 120,
-    height: 95.3,
-    alt: 'logo transparent',
-  },
-};
-
-export const WithSize: Story = {
-  args: {
-    src: '/image/logo/light.svg',
-    sizes: 120,
-    alt: 'logo light',
+    src: '/image/logo/mono.png',
+    width: 150,
+    height: 120,
+    alt: 'Transparent logo of Astronomy Club at NITIC',
   },
 };
