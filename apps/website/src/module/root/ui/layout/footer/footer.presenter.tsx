@@ -15,7 +15,7 @@ export const Footer: FC<FooterProps> = (props) => (
             <Image src="/image/logo/dark.svg" width={64} height={64} alt="天文部のロゴ" className="h-16 w-16" />
             <Image src="/image/logo/light.svg" width={64} height={64} alt="天文部のロゴ" className="h-16 w-16" />
           </div>
-          <Link href={new URL('https://www.ibaraki-ct.ac.jp/')} target="_blank" rel="noopener noreferrer">
+          <Link external href={new URL('https://www.ibaraki-ct.ac.jp/').href} target="_blank" rel="noopener noreferrer">
             <Image
               src={NiticLogoImage}
               // TODO: Tailwindで設定したブレイクポイントと同じものを使って指定するようにする
@@ -30,14 +30,14 @@ export const Footer: FC<FooterProps> = (props) => (
           <li className="flex items-center gap-1">
             <RxTwitterLogo />
             Twitter
-            <Link href={new URL('https://twitter.com/nitic_astronomy/')} target="_blank" rel="noopener noreferrer">
+            <Link external href={new URL('https://twitter.com/nitic_astronomy/').href} target="_blank" rel="noopener noreferrer">
               @nitic_astronomy
             </Link>
           </li>
           <li className="flex items-center gap-1">
             <RxInstagramLogo />
             Instagram
-            <Link href={new URL('https://www.instagram.com/nitic_astronomy/')} target="_blank" rel="noopener noreferrer">
+            <Link external href={new URL('https://www.instagram.com/nitic_astronomy/').href} target="_blank" rel="noopener noreferrer">
               @nitic_astronomy
             </Link>
           </li>
@@ -45,7 +45,8 @@ export const Footer: FC<FooterProps> = (props) => (
             <RxNotionLogo />
             Notionで
             <Link
-              href={new URL('https://nitic-astronomy.notion.site/Astronomy-Club-at-NITIC-a2ada4c005d647dd866767a69570e1a2/')}
+              external
+              href={new URL('https://nitic-astronomy.notion.site/Astronomy-Club-at-NITIC-a2ada4c005d647dd866767a69570e1a2/').href}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -55,7 +56,7 @@ export const Footer: FC<FooterProps> = (props) => (
           <li className="flex items-center gap-1">
             <RxGithubLogo />
             GitHubで
-            <Link href={new URL('https://github.com/astronomy-club-at-nitic/')} target="_blank" rel="noopener noreferrer">
+            <Link external href={new URL('https://github.com/astronomy-club-at-nitic/').href} target="_blank" rel="noopener noreferrer">
               天文部の取り組みを見る
             </Link>
           </li>
