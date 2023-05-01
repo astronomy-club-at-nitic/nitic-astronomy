@@ -1,5 +1,6 @@
 import { getArticleIds, getArticleDetail } from '@nitic-astronomy/cms';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import type { ReactElement } from 'react';
 
 type ArticlePageParams = {
@@ -16,6 +17,8 @@ export const generateStaticParams = async (): Promise<ArticlePageParams[]> => {
 const ArticlePage = async ({ params }: { params: ArticlePageParams }): Promise<ReactElement> => {
   const article = await getArticleDetail({
     id: params.articleId,
+  }).catch(() => {
+    notFound();
   });
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 text-keyplate-12">
@@ -60,6 +63,8 @@ export const revalidate = 60;
 export const generateMetadata = async ({ params }: { params: ArticlePageParams }): Promise<Metadata> => {
   const article = await getArticleDetail({
     id: params.articleId,
+  }).catch(() => {
+    notFound();
   });
 
   const metadata: Metadata = {

@@ -1,5 +1,6 @@
 import { getTagIds, getTagDetail } from '@nitic-astronomy/cms';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import type { ReactElement } from 'react';
 
 type TagPageParams = {
@@ -16,6 +17,8 @@ export const generateStaticParams = async (): Promise<TagPageParams[]> => {
 const TagPage = async ({ params }: { params: TagPageParams }): Promise<ReactElement> => {
   const tag = await getTagDetail({
     id: params.tagId,
+  }).catch(() => {
+    notFound();
   });
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 text-keyplate-12">
@@ -60,6 +63,8 @@ export const revalidate = 60;
 export const generateMetadata = async ({ params }: { params: TagPageParams }): Promise<Metadata> => {
   const tag = await getTagDetail({
     id: params.tagId,
+  }).catch(() => {
+    notFound();
   });
 
   const metadata: Metadata = {
