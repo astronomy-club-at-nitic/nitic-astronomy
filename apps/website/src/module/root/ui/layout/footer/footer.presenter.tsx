@@ -2,12 +2,11 @@ import type { ComponentPropsWithoutRef, FC } from 'react';
 import { RxGithubLogo, RxInstagramLogo, RxNotionLogo, RxTwitterLogo } from 'react-icons/rx';
 import { Image } from '@/core/component/image';
 import { Link } from '@/core/component/link';
+import NiticLogoImage from '@public/image/logo/nitic.png';
 
-type FooterProps = ComponentPropsWithoutRef<'footer'> & {
-  isSm: boolean;
-};
+type FooterProps = ComponentPropsWithoutRef<'footer'>;
 
-export const Footer: FC<FooterProps> = ({ isSm, ...props }) => (
+export const Footer: FC<FooterProps> = (props) => (
   <footer className="flex justify-center bg-dot-pattern-light p-6 dark:bg-dot-pattern-dark" {...props}>
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 sm:flex-row sm:gap-6">
@@ -18,11 +17,12 @@ export const Footer: FC<FooterProps> = ({ isSm, ...props }) => (
           </div>
           <Link href={new URL('https://www.ibaraki-ct.ac.jp/')} target="_blank" rel="noopener noreferrer">
             <Image
-              src="/image/logo/nitic.png"
-              width={isSm ? 274 : 342}
-              height={isSm ? 44 : 55}
+              src={NiticLogoImage}
+              // TODO: Tailwindで設定したブレイクポイントと同じものを使って指定するようにする
+              sizes={'(max-width: 640px) 100vw, 40w'}
+              placeholder="blur"
               alt="茨城工業高等専門学校のロゴ"
-              className="select-none"
+              className="w-[342px] select-none sm:w-[273px]"
             />
           </Link>
         </div>
