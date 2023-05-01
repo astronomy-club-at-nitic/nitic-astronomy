@@ -17,10 +17,16 @@ export const Footer: FC<FooterProps> = ({ isSm, ...props }) => (
             <Image src="/image/logo/light.svg" sizes={64} alt="天文部のロゴ" className="h-16 w-16" />
           </div>
           <Link href={new URL('https://www.ibaraki-ct.ac.jp/')} target="_blank" rel="noopener noreferrer">
-            <Image src="/image/logo/nitic.png" width={isSm ? 274 : 342} height={isSm ? 44 : 55} alt="茨城工業高等専門学校のロゴ" />
+            <Image
+              src="/image/logo/nitic.png"
+              width={isSm ? 274 : 342}
+              height={isSm ? 44 : 55}
+              alt="茨城工業高等専門学校のロゴ"
+              className="select-none"
+            />
           </Link>
         </div>
-        <ul className="flex flex-col gap-3 py-3 font-bold text-slate-light-11">
+        <ul className="flex flex-col gap-3 py-3 font-bold text-slate-11">
           <li className="flex items-center gap-1">
             <RxTwitterLogo />
             Twitter
