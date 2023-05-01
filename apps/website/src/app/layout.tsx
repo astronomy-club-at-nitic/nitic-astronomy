@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 import { fontFamily } from '@/core/font/family.font';
@@ -22,6 +23,8 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
       <body
         className={`${fontFamily} flex min-h-screen flex-col bg-slate-2 font-sans scrollbar-thin scrollbar-track-transparent scrollbar-thumb-keyplate-6 scrollbar-thumb-rounded-full hover:scrollbar-thumb-keyplate-7`}
       >
+        {/* Refer: https://vercel.com/docs/concepts/analytics/quickstart */}
+        <Analytics />
         <ThemeProvider attribute="data-theme">
           <Header />
           <PageTransitionAnimationProvider>
