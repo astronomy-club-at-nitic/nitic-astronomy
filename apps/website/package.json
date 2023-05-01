@@ -22,6 +22,8 @@
     "chromatic": "pnpx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
+    "@nitic-astronomy/model": "workspace:*",
+    "@nitic-astronomy/cms": "workspace:*",
     "@radix-ui/react-navigation-menu": "1.1.2",
     "date-fns": "2.30.0",
     "date-fns-tz": "2.0.0",
