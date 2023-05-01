@@ -13,8 +13,8 @@ export const Footer: FC<FooterProps> = ({ isSm, ...props }) => (
       <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 sm:flex-row sm:gap-6">
         <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 sm:border-b-0 sm:border-r-2 sm:pr-6">
           <div className="flex gap-4">
-            <Image src="/image/logo/dark.svg" sizes={64} alt="天文部のロゴ" className="h-16 w-16" />
-            <Image src="/image/logo/light.svg" sizes={64} alt="天文部のロゴ" className="h-16 w-16" />
+            <Image src="/image/logo/dark.svg" width={64} height={64} alt="天文部のロゴ" className="h-16 w-16" />
+            <Image src="/image/logo/light.svg" width={64} height={64} alt="天文部のロゴ" className="h-16 w-16" />
           </div>
           <Link href={new URL('https://www.ibaraki-ct.ac.jp/')} target="_blank" rel="noopener noreferrer">
             <Image
