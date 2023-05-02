@@ -11,8 +11,8 @@ type FooterProps = ComponentPropsWithoutRef<'footer'>;
 export const Footer: FC<FooterProps> = (props) => (
   <footer className="flex justify-center bg-dot-pattern-light p-6 dark:bg-dot-pattern-dark" {...props}>
     <div className="flex flex-col gap-2">
-      <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 sm:flex-row sm:gap-6">
-        <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 sm:border-b-0 sm:border-r-2 sm:pr-6">
+      <div className="sm:flex-row sm:gap-6 flex flex-col gap-2 border-b-2 border-slate-6 pb-2">
+        <div className="sm:border-b-0 sm:border-r-2 sm:pr-6 flex flex-col gap-2 border-b-2 border-slate-6 pb-2">
           <div className="flex gap-4">
             <Image src={SquareDarkLogoImage} width={64} height={64} alt="天文部の暗いロゴ" placeholder="blur" className="h-16 w-16" />
             <Image src={SquareLightLogoImage} width={64} height={64} alt="天文部の明るいロゴ" placeholder="blur" className="h-16 w-16" />
@@ -24,7 +24,7 @@ export const Footer: FC<FooterProps> = (props) => (
               sizes={'(max-width: 640px) 100vw, 40w'}
               placeholder="blur"
               alt="茨城工業高等専門学校のロゴ"
-              className="w-[342px] select-none sm:w-[273px]"
+              className="sm:w-[273px] w-[342px] select-none"
             />
           </Link>
         </div>
