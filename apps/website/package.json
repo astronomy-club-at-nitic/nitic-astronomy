@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "1.1.2",
+    "@t3-oss/env-nextjs": "0.2.2",
     "@vercel/analytics": "1.0.0",
     "date-fns": "2.30.0",
     "date-fns-tz": "2.0.0",
