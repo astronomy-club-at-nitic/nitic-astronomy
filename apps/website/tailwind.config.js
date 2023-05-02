@@ -2,9 +2,9 @@ const tailwindScrollbar = require('tailwind-scrollbar');
 const defaultTheme = require('tailwindcss/defaultTheme');
 const { createThemes } = require('tw-colors');
 
-const coreTokens = require('./src/style/token/core.json');
-const darkTokens = require('./src/style/token/dark.json');
-const lightTokens = require('./src/style/token/light.json');
+const coreTokens = require('./src/style/token/color/core.json');
+const darkTokens = require('./src/style/token/color/dark.json');
+const lightTokens = require('./src/style/token/color/light.json');
 
 /** @type {import('tailwindcss').Config} */
 const config = {
