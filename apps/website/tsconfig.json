@@ -12,7 +12,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "#cms/*": ["../../packages/cms/src/*"],
-      "#model/*": ["../../packages/model/src/*"]
+      "#model/*": ["../../packages/model/src/*"],
+      "@public/*": ["./public/*"]
     },
     "rootDir": "./"
   },

@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Header } from './header.layout';
+import { Root } from './root.page';
 
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof Root>;
 
 const meta = {
-  component: Header,
+  component: Root,
   argTypes: {},
-} satisfies Meta<typeof Header>;
+} satisfies Meta<typeof Root>;
 
 export default meta;
 

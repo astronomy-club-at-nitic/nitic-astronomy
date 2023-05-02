@@ -2,9 +2,10 @@ const tailwindScrollbar = require('tailwind-scrollbar');
 const defaultTheme = require('tailwindcss/defaultTheme');
 const { createThemes } = require('tw-colors');
 
-const coreTokens = require('./src/style/token/core.json');
-const darkTokens = require('./src/style/token/dark.json');
-const lightTokens = require('./src/style/token/light.json');
+const breakpoints = require('./src/style/token/breakpoint.json');
+const coreTokens = require('./src/style/token/color/core.json');
+const darkTokens = require('./src/style/token/color/dark.json');
+const lightTokens = require('./src/style/token/color/light.json');
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -12,8 +13,16 @@ const config = {
   content: ['./src/**/*.{ts,tsx}'],
   // Tailwind CSSのユーティリティセレクタ`dark:`に対応するCSSセレクタ
   // この場合、`dark:`は`[data-theme="dark"] `に置き換えられる
-  darkMode: ['[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
+  darkMode: ['class', '[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
   theme: {
+    backgroundImage: {
+      'dot-pattern-light': "url('/image/background/dot-pattern-light.svg')",
+      'dot-pattern-dark': "url('/image/background/dot-pattern-dark.svg')",
+    },
+    screens: {
+      tablet: `${breakpoints.tablet.minWidth}px`,
+      desktop: `${breakpoints.desktop.minWidth}px`,
+    },
     colors: {
       transparent: 'transparent',
       white: '#fff',
@@ -27,6 +36,10 @@ const config = {
       ...coreTokens.colors,
     },
     extend: {
+      boxShadow: {
+        card: '0px 4px 16px rgba(0, 0, 0, 0.05)',
+        floating: '0px 4px 32px rgba(0, 0, 0, 0.1)',
+      },
       fontFamily: {
         main: ['var(--font-noto-sans-jp)', ...defaultTheme.fontFamily.sans],
         article: ['var(--font-shippori-mincho-b1)', ...defaultTheme.fontFamily.serif],

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import type { ComponentPropsWithoutRef, FC } from 'react';
+import { Link } from '@/core/component/link';
 
 type HeaderProps = ComponentPropsWithoutRef<'header'>;
 
