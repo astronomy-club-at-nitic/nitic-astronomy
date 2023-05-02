@@ -32,10 +32,9 @@ export default MembersPage;
 
 export const revalidate = 60;
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const metadata: Metadata = {
-    title: '部員紹介',
-  };
-
-  return metadata;
+export const metadata: Metadata = {
+  title: '部員紹介',
+  openGraph: {
+    images: [`/api/ogimage?title=${encodeURIComponent('部員紹介')}`],
+  },
 };

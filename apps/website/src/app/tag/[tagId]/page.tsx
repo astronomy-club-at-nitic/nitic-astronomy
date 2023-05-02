@@ -47,6 +47,9 @@ export const generateMetadata = async ({ params }: { params: TagPageParams }): P
 
   const metadata: Metadata = {
     title: `#${tag.name}`,
+    openGraph: {
+      images: [`/api/ogimage?title=${encodeURIComponent(`#${tag.name}`)}`],
+    },
   };
 
   return metadata;

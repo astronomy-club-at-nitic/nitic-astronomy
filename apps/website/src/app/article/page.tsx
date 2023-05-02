@@ -31,4 +31,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: '記事一覧',
+  openGraph: {
+    images: [`/api/ogimage?title=${encodeURIComponent('記事一覧')}`],
+  },
 };
