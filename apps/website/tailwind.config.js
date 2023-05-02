@@ -32,6 +32,10 @@ const config = {
       ...coreTokens.colors,
     },
     extend: {
+      boxShadow: {
+        card: '0px 4px 16px rgba(0, 0, 0, 0.05)',
+        floating: '0px 4px 32px rgba(0, 0, 0, 0.1)',
+      },
       fontFamily: {
         main: ['var(--font-noto-sans-jp)', ...defaultTheme.fontFamily.sans],
         article: ['var(--font-shippori-mincho-b1)', ...defaultTheme.fontFamily.serif],
