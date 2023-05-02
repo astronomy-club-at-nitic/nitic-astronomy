@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import type { FC, ReactNode } from 'react';
 import { fontFamily } from '@/core/font/family.font';
@@ -6,6 +7,7 @@ import { PageTransitionAnimationProvider } from '@/core/provider/page-transition
 import { ThemeProvider } from '@/core/provider/theme.provider';
 import { Footer } from '@/module/root/ui/layout/footer';
 import { Header } from '@/module/root/ui/layout/header';
+import { colorTokens } from '@/style/token';
 import '@/style/global.css';
 
 type RootLayoutProps = {
@@ -22,6 +24,8 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
       <body
         className={`${fontFamily} flex min-h-screen flex-col bg-slate-2 font-main scrollbar-thin scrollbar-track-transparent scrollbar-thumb-keyplate-6 scrollbar-thumb-rounded-full hover:scrollbar-thumb-keyplate-7`}
       >
+        {/* Refer: https://vercel.com/docs/concepts/analytics/quickstart */}
+        <Analytics />
         <ThemeProvider attribute="data-theme">
           <Header />
           <PageTransitionAnimationProvider>
@@ -66,7 +70,7 @@ export const metadata: Metadata = {
     site: '@NITIC_astronomy',
   },
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f8f9fa' }, // keyplate-light-2
-    { media: '(prefers-color-scheme: dark)', color: '#1a1d1e' }, // keyplate-dark-2
+    { media: '(prefers-color-scheme: light)', color: colorTokens.keyplate.light['2'] }, // keyplate-light-2
+    { media: '(prefers-color-scheme: dark)', color: colorTokens.keyplate.dark['2'] }, // keyplate-dark-2
   ],
 };
