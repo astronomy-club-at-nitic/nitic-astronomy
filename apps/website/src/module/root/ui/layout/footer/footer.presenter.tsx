@@ -2,6 +2,7 @@ import type { ComponentPropsWithoutRef, FC } from 'react';
 import { RxGithubLogo, RxInstagramLogo, RxNotionLogo, RxTwitterLogo } from 'react-icons/rx';
 import { Image } from '@/core/component/image';
 import { Link } from '@/core/component/link';
+import { breakpointTokens } from '@/style/token';
 import NiticLogoImage from '@public/image/logo/nitic.png';
 import SquareDarkLogoImage from '@public/image/logo/square-dark.png';
 import SquareLightLogoImage from '@public/image/logo/square-light.png';
@@ -11,8 +12,8 @@ type FooterProps = ComponentPropsWithoutRef<'footer'>;
 export const Footer: FC<FooterProps> = (props) => (
   <footer className="flex justify-center bg-dot-pattern-light p-6 dark:bg-dot-pattern-dark" {...props}>
     <div className="flex flex-col gap-2">
-      <div className="sm:flex-row sm:gap-6 flex flex-col gap-2 border-b-2 border-slate-6 pb-2">
-        <div className="sm:border-b-0 sm:border-r-2 sm:pr-6 flex flex-col gap-2 border-b-2 border-slate-6 pb-2">
+      <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 tablet:flex-row tablet:gap-6">
+        <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 tablet:border-b-0 tablet:border-r-2 tablet:pr-6">
           <div className="flex gap-4">
             <Image src={SquareDarkLogoImage} width={64} height={64} alt="天文部の暗いロゴ" placeholder="blur" className="h-16 w-16" />
             <Image src={SquareLightLogoImage} width={64} height={64} alt="天文部の明るいロゴ" placeholder="blur" className="h-16 w-16" />
@@ -20,11 +21,10 @@ export const Footer: FC<FooterProps> = (props) => (
           <Link external href={new URL('https://www.ibaraki-ct.ac.jp/').href} target="_blank" rel="noopener noreferrer">
             <Image
               src={NiticLogoImage}
-              // TODO: Tailwindで設定したブレイクポイントと同じものを使って指定するようにする
-              sizes={'(max-width: 640px) 100vw, 40w'}
+              sizes={`${breakpointTokens.tablet.mediaQuery} 100vw, 40w`}
               placeholder="blur"
               alt="茨城工業高等専門学校のロゴ"
-              className="sm:w-[273px] w-[342px] select-none"
+              className="w-[342px] select-none tablet:w-[273px]"
             />
           </Link>
         </div>
