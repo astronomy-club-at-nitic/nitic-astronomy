@@ -86,5 +86,14 @@ module.exports = {
         "import/prefer-default-export": "off",
       },
     },
+    {
+      // Disable react and a11y rules for API router
+      files: ["./src/app/api/**", "./src/pages/api/**"],
+      rules: {
+        "import/no-default-export": "off",
+        "jsx-a11y/alt-text": "off",
+        "@next/next/no-img-element": "off",
+      },
+    },
   ],
 };
