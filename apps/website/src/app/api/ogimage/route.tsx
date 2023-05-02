@@ -1,4 +1,5 @@
 import { ImageResponse } from '@vercel/og';
+import { colorTokens } from '@/style/token';
 
 // Utilities for title truncation
 // Counts the number of graphemes in a string
@@ -83,8 +84,8 @@ export async function GET(request: Request) {
         <div
           style={{
             position: 'relative',
-            background: '#F8F9FA', // keyplate-2
-            color: '#11181C', // keyplate-12
+            background: colorTokens.keyplate.light['2'],
+            color: colorTokens.keyplate.light['12'],
             width: '100%',
             height: '100%',
             display: 'flex',
@@ -144,7 +145,7 @@ export async function GET(request: Request) {
                 inset: 0,
                 background: 'transparent',
                 transform: 'scale(2)',
-                boxShadow: 'inset 0 0 192px 64px #F8F9FA', // keyplate-2
+                boxShadow: `inset 0 0 192px 64px ${colorTokens.keyplate.light['2']}`,
               }}
             />
             {/* Actual cover image */}
@@ -216,7 +217,7 @@ export async function GET(request: Request) {
                 style={{
                   margin: 0,
                   fontSize: 32,
-                  color: '#340C3B', // primary-12
+                  color: colorTokens.primary.light['12'],
                 }}
               >
                 新入部員募集中！🌕🔭🌠
@@ -225,7 +226,7 @@ export async function GET(request: Request) {
                 style={{
                   margin: 0,
                   fontSize: 24,
-                  color: '#9C2BAD', // primary-11
+                  color: colorTokens.primary.light['11'],
                 }}
               >
                 毎週水曜日に活動しています！
@@ -239,10 +240,10 @@ export async function GET(request: Request) {
                 justifyContent: 'center',
                 margin: 0,
                 padding: '24px 16px',
-                background: '#FEFCFF', // primary-1
+                background: colorTokens.primary.light['1'],
                 borderRadius: 999,
                 fontSize: 24,
-                color: '#9C2BAD', // primary-11
+                color: colorTokens.primary.light['11'],
               }}
             >
               +25名
