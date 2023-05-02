@@ -1,0 +1,10 @@
+{
+  "tablet": {
+    "minWidth": 640,
+    "mediaQuery": "(min-width: 640px)"
+  },
+  "desktop": {
+    "minWidth": 1024,
+    "mediaQuery": "(min-width: 1024px)"
+  }
+}

@@ -24,10 +24,11 @@
   "dependencies": {
     "@radix-ui/react-navigation-menu": "1.1.2",
     "@t3-oss/env-nextjs": "0.2.2",
+    "@vercel/analytics": "1.0.0",
     "date-fns": "2.30.0",
     "date-fns-tz": "2.0.0",
     "dotenv": "16.0.3",
-    "framer-motion": "10.12.4",
+    "framer-motion": "10.12.5",
     "microcms-js-sdk": "2.3.3",
     "next": "13.3.4",
     "next-themes": "0.2.1",
