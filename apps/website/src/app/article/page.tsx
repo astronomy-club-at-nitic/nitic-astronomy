@@ -31,7 +31,16 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: '記事一覧',
+  description: '茨城高専天文部が書いた記事の一覧です。',
   openGraph: {
-    images: [`/api/ogimage?title=${encodeURIComponent('記事一覧')}`],
+    images: [
+      {
+        url: `/api/ogimage?title=${encodeURIComponent('記事一覧')}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+    locale: 'ja_JP',
   },
 };

@@ -46,9 +46,9 @@ export const generateMetadata = async ({ params }: { params: ArticlePageParams }
   });
 
   const metadata: Metadata = {
-    title: `記事: ${article.title}`,
+    title: article.title,
+    description: article.summary,
     openGraph: {
-      description: article.summary,
       images: [
         {
           url: `/api/ogimage?title=${encodeURIComponent(article.title)}`,

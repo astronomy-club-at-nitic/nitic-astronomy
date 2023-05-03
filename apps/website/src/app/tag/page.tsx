@@ -31,6 +31,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'タグ一覧',
+  description: '茨城高専天文部が書いた記事につけているタグの一覧です。さまざまな活動をしているので、興味のあるタグを探してみてください！',
   openGraph: {
     images: [`/api/ogimage?title=${encodeURIComponent('タグ一覧')}`],
   },

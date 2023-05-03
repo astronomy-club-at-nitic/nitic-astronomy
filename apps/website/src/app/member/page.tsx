@@ -34,7 +34,17 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: '部員紹介',
+  description:
+    '茨城高専天文部で活動している、25名余りの部員を紹介します。また、新入部員も募集中です！毎週水曜日に活動していますので、興味のある方はぜひお越しください！',
   openGraph: {
-    images: [`/api/ogimage?title=${encodeURIComponent('部員紹介')}`],
+    images: [
+      {
+        url: `/api/ogimage?title=${encodeURIComponent('部員紹介')}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'article',
+    locale: 'ja_JP',
   },
 };

@@ -47,8 +47,17 @@ export const generateMetadata = async ({ params }: { params: TagPageParams }): P
 
   const metadata: Metadata = {
     title: `#${tag.name}`,
+    description: tag.description || `#${tag.name}のついている記事の一覧です。`,
     openGraph: {
-      images: [`/api/ogimage?title=${encodeURIComponent(`#${tag.name}`)}`],
+      images: [
+        {
+          url: `/api/ogimage?title=${encodeURIComponent(`#${tag.name}`)}`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      type: 'article',
+      locale: 'ja_JP',
     },
   };
 
