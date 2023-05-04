@@ -3,7 +3,7 @@ import type { FC, ComponentPropsWithoutRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { pickUniquely } from './pick-uniquely';
 
-export const tagColors = ['plum', 'yellow', 'lime', 'mint', 'sky', 'amber'] as const;
+export const tagColors = ['plum', 'yellow', 'lime', 'mint', 'sky', 'amber', 'keyplate'] as const;
 
 export type TagColor = (typeof tagColors)[number];
 
@@ -12,6 +12,7 @@ const tagColorStyle = cva<{
 }>(null, {
   variants: {
     color: {
+      keyplate: 'bg-keyplate-4 text-keyplate-11',
       plum: 'bg-plum-4 text-plum-11',
       yellow: 'bg-yellow-4 text-yellow-11',
       lime: 'bg-lime-4 text-lime-11',
@@ -27,6 +28,7 @@ const tagForceDarkColorStyle = cva<{
 }>(null, {
   variants: {
     color: {
+      keyplate: 'bg-keyplate-dark-4 text-keyplate-dark-11',
       plum: 'bg-plum-dark-4 text-plum-dark-11',
       yellow: 'bg-yellow-dark-4 text-yellow-dark-11',
       lime: 'bg-lime-dark-4 text-lime-dark-11',
