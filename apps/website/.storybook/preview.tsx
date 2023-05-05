@@ -3,7 +3,7 @@ import { Preview } from '@storybook/react';
 import React from 'react';
 import { fontFamily } from '../src/core/font/family.font';
 import { ThemeProvider } from '../src/core/provider/theme.provider';
-import '../src/style/global.css';
+import './storybook-global.css';
 
 const preview: Preview = {
   decorators: [
