@@ -22,6 +22,7 @@
     "chromatic": "pnpx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
+    "@nitic-astronomy/model": "workspace:*",
     "@radix-ui/react-navigation-menu": "1.1.2",
     "@vercel/og": "0.5.4",
     "@t3-oss/env-nextjs": "0.2.2",
