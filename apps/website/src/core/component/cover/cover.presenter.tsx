@@ -25,7 +25,7 @@ export const CoverDescription: FC<CoverDescriptionProps> = ({ children, classNam
 export type CoverTagListProps = ComponentPropsWithoutRef<'ul'>;
 
 export const CoverTagList: FC<CoverTagListProps> = ({ children, className, ...props }) => (
-  <ul {...props} className={twMerge('flex w-full flex-row flex-wrap items-center justify-start gap-2', className)}>
+  <ul {...props} className={twMerge('flex w-full flex-row flex-wrap items-center justify-start gap-2 text-small', className)}>
     {children}
   </ul>
 );

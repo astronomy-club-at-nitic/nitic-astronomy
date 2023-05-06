@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Cover, CoverTitle, CoverDescription } from './cover.presenter';
+import { Cover, CoverTitle, CoverDescription, CoverTagList } from './cover.presenter';
+import { Link } from '@/core/component/link';
+import { Tag } from '@/module/article/ui/component/tag';
 
 type Story = StoryObj<typeof Cover>;
 
@@ -42,5 +44,39 @@ export const Small: Story = {
 export const WithExternalImage: Story = {
   args: {
     src: 'https://images.unsplash.com/photo-1532635241-17e820acc59f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1715&q=80',
+  },
+};
+
+export const WithTagList: Story = {
+  args: {
+    children: (
+      <>
+        <CoverTitle>定例観測会の実施のお知らせ</CoverTitle>
+        <CoverDescription>2023年3月1日(水) 掲載 ・ 2023年4月30日(日) 更新</CoverDescription>
+        <CoverTagList>
+          <li>
+            <Link href="/">
+              <Tag color="plum" forceDark>
+                #イベント
+              </Tag>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <Tag color="sky" forceDark>
+                #定例観測会
+              </Tag>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <Tag color="amber" forceDark>
+                #オフライン
+              </Tag>
+            </Link>
+          </li>
+        </CoverTagList>
+      </>
+    ),
   },
 };
