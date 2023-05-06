@@ -10,7 +10,7 @@ import SquareLightLogoImage from '@public/image/logo/square-light.png';
 type FooterProps = ComponentPropsWithoutRef<'footer'>;
 
 export const Footer: FC<FooterProps> = (props) => (
-  <footer className="flex justify-center bg-dot-pattern-light p-6 dark:bg-dot-pattern-dark" {...props}>
+  <footer className="flex justify-center bg-dot-pattern-light p-6 shadow-floating dark:bg-dot-pattern-dark" {...props}>
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 tablet:flex-row tablet:gap-6">
         <div className="flex flex-col gap-2 border-b-2 border-slate-6 pb-2 tablet:border-b-0 tablet:border-r-2 tablet:pr-6">

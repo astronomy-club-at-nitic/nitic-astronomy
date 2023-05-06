@@ -16,6 +16,7 @@ const config = {
   darkMode: ['class', '[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
   theme: {
     screens: {
+      mobile: `${breakpoints.mobile.minWidth}px`,
       tablet: `${breakpoints.tablet.minWidth}px`,
       desktop: `${breakpoints.desktop.minWidth}px`,
     },
