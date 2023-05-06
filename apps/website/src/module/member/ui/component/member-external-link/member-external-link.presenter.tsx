@@ -46,7 +46,13 @@ type MemberExternalLinkProps = Omit<ComponentPropsWithoutRef<typeof Link>, 'chil
 export const MemberExternalLink: FC<MemberExternalLinkProps> = ({ href, variant, className, ...props }) => {
   const resolvedVariant: LinkVariant = variant ?? extractLinkVariant(href);
   return (
-    <Link external href={href} className={twMerge('text-small no-underline', className)} {...props}>
+    <Link
+      external
+      href={href}
+      aria-label={`${cropLinkDomain(href)} への外部リンク`}
+      className={twMerge('text-small no-underline', className)}
+      {...props}
+    >
       <Tag color="keyplate" className="inline-flex items-center gap-1 duration-100 hover:scale-110 hover:shadow-card">
         {resolvedVariant === 'twitter' && <RxTwitterLogo size={'1.5em'} />}
         {resolvedVariant === 'github' && <RxGithubLogo size={'1.5em'} />}
