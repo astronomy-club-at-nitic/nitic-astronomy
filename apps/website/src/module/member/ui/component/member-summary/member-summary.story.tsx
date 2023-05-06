@@ -39,3 +39,9 @@ export const WithExternalIcon: Story = {
     role: '会計・4年情報系',
   },
 };
+
+export const WithCount: Story = {
+  args: {
+    count: 3,
+  },
+};

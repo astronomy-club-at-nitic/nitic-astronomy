@@ -1,6 +1,7 @@
 import type { Member } from '@nitic-astronomy/model';
 import type { FC, ComponentPropsWithoutRef } from 'react';
 import { twMerge } from '@/core/util/tw-merge.util';
+import { Tag } from '@/module/article/ui/component/tag/tag.presenter';
 import { MemberIcon } from '@/module/member/ui/component/member-icon';
 import SquareLightLogoImage from '@public/image/logo/square-light.png';
 
@@ -20,5 +21,10 @@ export const MemberSummary: FC<MemberSummaryProps> = ({ name, icon, role, count,
       <p>{name}</p>
       {role && <p className="text-small text-keyplate-11">{role}</p>}
     </div>
+    {count && (
+      <Tag color="keyplate" aria-label={`著者は他にも${count}名います。`} className="text-small font-bold">
+        +{count}名
+      </Tag>
+    )}
   </li>
 );
