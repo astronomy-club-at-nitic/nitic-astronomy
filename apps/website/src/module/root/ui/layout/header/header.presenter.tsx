@@ -28,17 +28,29 @@ export const Header: FC<HeaderProps> = ({ children, ...props }) => (
       </Link>
       <ul className="flex shrink grow flex-row items-center justify-between truncate">
         <li className="inline-flex shrink truncate">
-          <Link href="/article" className="truncate rounded-full px-1.5 py-2 no-underline hover:bg-primary-3 hover:text-primary-11 tablet:px-4">
+          <Link
+            title="記事を見る"
+            href="/article"
+            className="truncate rounded-full px-1.5 py-2 no-underline hover:bg-primary-3 hover:text-primary-11 tablet:px-4"
+          >
             記事を見る
           </Link>
         </li>
         <li className="inline-flex shrink truncate">
-          <Link href="/tag" className="truncate rounded-full px-1.5 py-2 no-underline hover:bg-primary-3 hover:text-primary-11 tablet:px-4">
+          <Link
+            title="タグを見る"
+            href="/tag"
+            className="truncate rounded-full px-1.5 py-2 no-underline hover:bg-primary-3 hover:text-primary-11 tablet:px-4"
+          >
             タグを見る
           </Link>
         </li>
         <li className="inline-flex shrink truncate">
-          <Link href="/member" className="truncate rounded-full px-1.5 py-2 no-underline hover:bg-primary-3 hover:text-primary-11 tablet:px-4">
+          <Link
+            title="部員紹介"
+            href="/member"
+            className="truncate rounded-full px-1.5 py-2 no-underline hover:bg-primary-3 hover:text-primary-11 tablet:px-4"
+          >
             部員紹介
           </Link>
         </li>
