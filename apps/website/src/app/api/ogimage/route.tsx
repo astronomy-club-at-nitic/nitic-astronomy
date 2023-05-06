@@ -1,13 +1,6 @@
 import { ImageResponse } from '@vercel/og';
+import { uniCount, uniToStrPos } from 'unicount';
 import { colorTokens } from '@/style/token';
-
-// Utilities for title truncation
-// Counts the number of graphemes in a string
-const countGraphemes = (str: string): number => {
-  const segmenter = new Intl.Segmenter('ja', { granularity: 'grapheme' });
-  const segments = segmenter.segment(str);
-  return Array.from(segments).length;
-};
 
 // type OgProps = {
 //   title: string;
@@ -50,7 +43,7 @@ export async function GET(request: Request) {
     // ?title=<title>
     const hasTitle = searchParams.has('title');
     const title = (hasTitle && searchParams.get('title')) || '茨城高専 天文部へようこそ！';
-    const displayedTitle = countGraphemes(title) > 32 ? `${title.slice(0, 31)}…` : title;
+    const displayedTitle = uniCount(title) > 32 ? `${title.slice(0, uniToStrPos(title, 31))}…` : title;
 
     // const { searchParams } = new URL(request.url);
     // const paramObject = Object.fromEntries(searchParams.entries());
@@ -176,11 +169,9 @@ export async function GET(request: Request) {
               style={{
                 margin: 0,
                 padding: 0,
-                fontSize: countGraphemes(displayedTitle) > 16 ? 48 : 64,
+                fontSize: uniCount(title) > 16 ? 48 : 64,
                 lineHeight: '120%',
                 letterSpacing: '0.05em',
-                textOverflow: 'ellipsis',
-                lineClamp: 2,
               }}
             >
               {displayedTitle}
