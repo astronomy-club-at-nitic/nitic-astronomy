@@ -1,1 +1,1 @@
-export * from './link.presenter';
+export { Link } from './link.presenter';

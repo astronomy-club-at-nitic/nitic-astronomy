@@ -71,8 +71,11 @@ importers:
         specifier: 1.0.0
         version: 1.0.0(react@18.2.0)
       '@vercel/og':
-        specifier: 0.5.4
-        version: 0.5.4
+        specifier: 0.5.3
+        version: 0.5.3
+      class-variance-authority:
+        specifier: 0.6.0
+        version: 0.6.0(typescript@4.9.5)
       date-fns:
         specifier: 2.30.0
         version: 2.30.0
@@ -115,6 +118,9 @@ importers:
       ts-pattern:
         specifier: 4.2.2
         version: 4.2.2
+      unicount:
+        specifier: 1.2.0
+        version: 1.2.0
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -4441,12 +4447,12 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@vercel/og@0.5.4:
-    resolution: {integrity: sha512-o4Zjgw66HPtfGFYG4CFcKfnCcK6qCY+3FC6g22Z1SdAN5jN8XjbHCh3hRVHH5IGBQp8mxH941EcH53KimAm+wg==}
+  /@vercel/og@0.5.3:
+    resolution: {integrity: sha512-7hKSUEzhUhK62Naaf1jD8d+AVLnLU6LGdakTTqucD1AP/CHqmsm5dvdE1z9QJNPyiCAyyihhXIoUdhCqKHZWBQ==}
     engines: {node: '>=16'}
     dependencies:
       '@resvg/resvg-wasm': 2.4.1
-      satori: 0.7.2
+      satori: 0.4.9
       yoga-wasm-web: 0.3.3
     dev: false
 
@@ -6344,6 +6350,18 @@ packages:
   /cjs-module-lexer@1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
 
+  /class-variance-authority@0.6.0(typescript@4.9.5):
+    resolution: {integrity: sha512-qdRDgfjx3GRb9fpwpSvn+YaidnT7IUJNe4wt5/SWwM+PmUwJUhQRk/8zAyNro0PmVfmen2635UboTjIBXXxy5A==}
+    peerDependencies:
+      typescript: '>= 4.5.5 < 6'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      clsx: 1.2.1
+      typescript: 4.9.5
+    dev: false
+
   /clean-css@5.3.2:
     resolution: {integrity: sha512-JVJbM+f3d3Q704rF4bqQ5UUyTtuJ0JRKNbTKVEeujCCBoMdkEi+V+e8oktO9qGQNSvHrFTM6JZRXrUvGR1czww==}
     engines: {node: '>= 10.0'}
@@ -6443,6 +6461,11 @@ packages:
     dependencies:
       mimic-response: 1.0.1
     dev: true
+
+  /clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /co@4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
@@ -9049,11 +9072,6 @@ packages:
     hasBin: true
     dev: true
 
-  /hex-rgb@4.3.0:
-    resolution: {integrity: sha512-Ox1pJVrDCyGHMG9CFg1tmrRUMRPRsAWYc/PinY0XzJU4K7y7vjNoLKIQ7BR5UJMCxNN8EM1MNDmHWA/B3aZUuw==}
-    engines: {node: '>=6'}
-    dev: false
-
   /home-or-tmp@2.0.0:
     resolution: {integrity: sha512-ycURW7oUxE2sNiPVw1HVEFsW+ecOpJ5zaj7eC0RlwhibhRBod20muUN8qu/gzx956YrLolVvs1MTXwKgC2rVEg==}
     engines: {node: '>=0.10.0'}
@@ -11577,13 +11595,6 @@ packages:
       callsites: 3.1.0
     dev: true
 
-  /parse-css-color@0.2.1:
-    resolution: {integrity: sha512-bwS/GGIFV3b6KS4uwpzCFj4w297Yl3uqnSgIPsoQkx7GMLROXfMnWvxfNkL0oh8HVhZA4hvJoEoEIqonfJ3BWg==}
-    dependencies:
-      color-name: 1.1.4
-      hex-rgb: 4.3.0
-    dev: false
-
   /parse-json@5.2.0:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
@@ -12773,8 +12784,8 @@ packages:
       immutable: 4.3.0
       source-map-js: 1.0.2
 
-  /satori@0.7.2:
-    resolution: {integrity: sha512-Eltg0/i3OEbBLaveCnYi2j+p0J9Bb5rmDMXddq4Zy0/NYHbpTkPIlPYGgb+DKamhmvXhiGvWGiFdqHVjJCaCpA==}
+  /satori@0.4.9:
+    resolution: {integrity: sha512-vV1h8GNCqMGD4Z/cbmCNLsUUkmfMVIV5TWwkxdSCocssz3cU2qiATHZqtZkUfEazGeSB2frvTC4xQ/+fQ4topg==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
@@ -12783,7 +12794,6 @@ packages:
       css-to-react-native: 3.2.0
       emoji-regex: 10.2.1
       linebreak: 1.1.0
-      parse-css-color: 0.2.1
       postcss-value-parser: 4.2.0
       yoga-wasm-web: 0.3.3
     dev: false
@@ -14358,6 +14368,10 @@ packages:
     dependencies:
       pako: 0.2.9
       tiny-inflate: 1.0.3
+    dev: false
+
+  /unicount@1.2.0:
+    resolution: {integrity: sha512-bbM0gwaKyIPll7smeeufgbN9sbJbrtr29o93HqF+4bzTeQcTN4zKtBKGwnLoGSG+E6gPQ/WL0t7xAhPKnWW4mQ==}
     dev: false
 
   /unique-string@2.0.0:
