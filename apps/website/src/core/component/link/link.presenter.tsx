@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 import type { ComponentPropsWithoutRef, FC } from 'react';
 import { twMerge } from '@/core/util/tw-merge.util';
 
-export type LinkProps =
+type LinkProps =
   | ComponentPropsWithoutRef<typeof NextLink>
   | (ComponentPropsWithoutRef<'a'> & {
       external: true;
