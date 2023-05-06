@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Image } from './image.presenter';
+import MonoLightLogoImage from '@public/image/logo/mono-light.png';
 
 type Story = StoryObj<typeof Image>;
 
@@ -25,9 +26,7 @@ export default meta;
 
 export const Default: Story = {
   args: {
-    src: '/image/logo/mono.png',
-    width: 150,
-    height: 120,
+    src: MonoLightLogoImage,
     alt: 'Transparent logo of Astronomy Club at NITIC',
   },
 };

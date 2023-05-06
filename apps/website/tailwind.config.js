@@ -20,6 +20,7 @@ const config = {
       'dot-pattern-dark': "url('/image/background/dot-pattern-dark.svg')",
     },
     screens: {
+      mobile: `${breakpoints.mobile.minWidth}px`,
       tablet: `${breakpoints.tablet.minWidth}px`,
       desktop: `${breakpoints.desktop.minWidth}px`,
     },
