@@ -1,1 +1,1 @@
-export * from './image.presenter';
+export { Image } from './image.presenter';
