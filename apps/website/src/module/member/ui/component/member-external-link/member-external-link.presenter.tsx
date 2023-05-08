@@ -8,9 +8,13 @@ import { Tag } from '@/module/article/ui/component/tag/tag.presenter';
 type LinkVariant = 'twitter' | 'github' | 'instagram' | 'notion' | 'other';
 
 const extractLinkVariant = (url?: string | UrlObject): LinkVariant => {
-  if (!url) return 'other';
+  if (!url) {
+    return 'other';
+  }
   const urlString = typeof url === 'string' ? url : url.href;
-  if (!urlString) return 'other';
+  if (!urlString) {
+    return 'other';
+  }
 
   // If the url is a twitter link
   if (urlString.match(/twitter\.com/)) {
@@ -34,7 +38,9 @@ const extractLinkVariant = (url?: string | UrlObject): LinkVariant => {
 
 const cropLinkDomain = (url?: string | UrlObject): string | undefined => {
   const urlObject = typeof url === 'string' ? new URL(url) : url;
-  if (!urlObject || !urlObject.hostname) return undefined;
+  if (!urlObject || !urlObject.hostname) {
+    return undefined;
+  }
   return urlObject.hostname.replace('www.', '');
 };
 
