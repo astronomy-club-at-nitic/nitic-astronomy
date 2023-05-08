@@ -15,10 +15,6 @@ const config = {
   // この場合、`dark:`は`[data-theme="dark"] `に置き換えられる
   darkMode: ['class', '[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
   theme: {
-    backgroundImage: {
-      'dot-pattern-light': "url('/image/background/dot-pattern-light.svg')",
-      'dot-pattern-dark': "url('/image/background/dot-pattern-dark.svg')",
-    },
     screens: {
       mobile: `${breakpoints.mobile.minWidth}px`,
       tablet: `${breakpoints.tablet.minWidth}px`,
@@ -37,6 +33,10 @@ const config = {
       ...coreTokens.colors,
     },
     extend: {
+      backgroundImage: {
+        'dot-pattern-light': "url('/image/background/dot-pattern-light.svg')",
+        'dot-pattern-dark': "url('/image/background/dot-pattern-dark.svg')",
+      },
       boxShadow: {
         card: '0px 4px 16px rgba(0, 0, 0, 0.05)',
         floating: '0px 4px 32px rgba(0, 0, 0, 0.1)',
