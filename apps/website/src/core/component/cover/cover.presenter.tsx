@@ -1,6 +1,5 @@
 import type { FC, ComponentPropsWithoutRef } from 'react';
 import { Image } from '@/core/component/image';
-import type { ImageProps } from '@/core/component/image';
 import { twMerge } from '@/core/util/tw-merge.util';
 import { breakpointTokens } from '@/style/token';
 import AbstractImage from '@public/image/background/abstract.jpg';
@@ -30,7 +29,7 @@ export const CoverTagList: FC<CoverTagListProps> = ({ children, className, ...pr
   </ul>
 );
 
-export type CoverProps = ComponentPropsWithoutRef<'div'> & Pick<ImageProps, 'src' | 'placeholder' | 'blurDataURL'>;
+export type CoverProps = ComponentPropsWithoutRef<'div'> & Pick<ComponentPropsWithoutRef<typeof Image>, 'src' | 'placeholder' | 'blurDataURL'>;
 
 export const Cover: FC<CoverProps> = ({ src, placeholder, blurDataURL, children, className, ...props }) => {
   return (
