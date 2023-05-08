@@ -5,10 +5,10 @@ import { MemberExternalLink } from '@/module/member/ui/component/member-external
 import { MemberIcon } from '@/module/member/ui/component/member-icon';
 import SquareLightLogoImage from '@public/image/logo/square-light.png';
 
-export type MemberCardProps = ComponentPropsWithoutRef<'li'> & Pick<Member, 'name' | 'icon' | 'role' | 'description' | 'externalLinks'>;
+export type MemberCardProps = ComponentPropsWithoutRef<'div'> & Pick<Member, 'name' | 'icon' | 'role' | 'description' | 'externalLinks'>;
 
 export const MemberCard: FC<MemberCardProps> = ({ name, icon, role, description, className, externalLinks, ...props }) => (
-  <li className={twMerge('flex flex-col items-stretch gap-2 rounded-lg bg-keyplate-1 p-6 shadow-floating', className)} {...props}>
+  <div className={twMerge('flex flex-col items-stretch gap-2 rounded-lg bg-keyplate-1 p-6 shadow-floating', className)} {...props}>
     <div className={'flex flex-row items-center gap-2.5'}>
       {icon ? (
         <MemberIcon src={icon.url} width={icon.width ?? 64} height={icon.height ?? 64} alt={`${name} のアイコン`} />
@@ -28,5 +28,5 @@ export const MemberCard: FC<MemberCardProps> = ({ name, icon, role, description,
         </li>
       ))}
     </ul>
-  </li>
+  </div>
 );

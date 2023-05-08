@@ -6,12 +6,12 @@ type Story = StoryObj<typeof MemberCard>;
 const meta: Meta<typeof MemberCard> = {
   component: MemberCard,
   args: {
+    className: 'max-w-sm',
     name: '鈴木 結衣',
     role: '会計・5年情報系',
     description: 'ここに自己紹介文を挿入＊e.g. 菅原圭っていうアーティストが好きです🥤',
     externalLinks: ['https://twitter.com/vercel', 'https://instagram.com/reohakuta', 'https://github.com/ReoHakase', 'https://www.example.com'],
   },
-  decorators: [(Story) => <ul className="max-w-sm">{Story()}</ul>],
   argTypes: {
     name: {
       description: 'A name of the member.',
