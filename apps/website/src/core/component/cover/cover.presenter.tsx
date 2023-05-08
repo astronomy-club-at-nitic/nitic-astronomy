@@ -5,9 +5,17 @@ import { breakpointTokens } from '@/style/token';
 import AbstractImage from '@public/image/background/abstract.jpg';
 import SquareDarkLogoImage from '@public/image/logo/square-dark.png';
 
+export type CoverHeadingGroupProps = ComponentPropsWithoutRef<'hgroup'>;
+
+export const CoverHeadingGroup: FC<CoverHeadingGroupProps> = ({ children, className, ...props }) => (
+  <hgroup className={twMerge('flex flex-col items-start justify-center gap-3', className)} {...props}>
+    {children}
+  </hgroup>
+);
+
 export type CoverTitleProps = ComponentPropsWithoutRef<'h1'>;
 
-export const CoverTitle: FC<CoverTitleProps> = ({ children, className, ...props }) => (
+export const CoverHeading: FC<CoverTitleProps> = ({ children, className, ...props }) => (
   <h1 {...props} className={twMerge('text-heading1 font-bold leading-[1.3] drop-shadow-[0px_6px_32px_#FFFFFF]', className)}>
     {children}
   </h1>
@@ -45,7 +53,7 @@ export const Cover: FC<CoverProps> = ({ src, placeholder, blurDataURL, children,
         blurDataURL={blurDataURL}
       />
       <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-keyplate-light-12/10 to-keyplate-light-12/50"></div>
-      <hgroup className="relative z-10 flex w-full max-w-[700px] flex-col items-start justify-center gap-3 p-6 text-keyplate-light-1">
+      <div className="relative z-10 flex w-full max-w-[700px] flex-col items-start justify-center gap-3 p-6 text-keyplate-light-1">
         <Image
           src={SquareDarkLogoImage}
           alt="茨城高専天文部のロゴ"
@@ -54,7 +62,7 @@ export const Cover: FC<CoverProps> = ({ src, placeholder, blurDataURL, children,
           className="mb-1.5 h-24 w-24 bg-purple-light-9"
         />
         {children}
-      </hgroup>
+      </div>
     </div>
   );
 };
