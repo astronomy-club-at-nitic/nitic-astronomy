@@ -9,7 +9,6 @@ const meta: Meta<typeof MemberSummary> = {
     name: '鈴木 結衣',
     role: '会計・5年情報系',
   },
-  decorators: [(Story) => <ul>{Story()}</ul>],
   argTypes: {
     name: {
       description: 'A name of the member.',

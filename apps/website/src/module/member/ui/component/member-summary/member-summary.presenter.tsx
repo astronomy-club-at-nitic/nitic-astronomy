@@ -5,13 +5,13 @@ import { Tag } from '@/module/article/ui/component/tag/tag.presenter';
 import { MemberIcon } from '@/module/member/ui/component/member-icon';
 import SquareLightLogoImage from '@public/image/logo/square-light.png';
 
-export type MemberSummaryProps = ComponentPropsWithoutRef<'li'> &
+export type MemberSummaryProps = ComponentPropsWithoutRef<'div'> &
   Pick<Member, 'name' | 'icon' | 'role'> & {
     count?: number;
   };
 
 export const MemberSummary: FC<MemberSummaryProps> = ({ name, icon, role, count, className, ...props }) => (
-  <li className={twMerge('flex flex-row items-center gap-2.5', className)} {...props}>
+  <div className={twMerge('flex flex-row items-center gap-2.5', className)} {...props}>
     {icon ? (
       <MemberIcon src={icon.url} width={icon.width ?? 64} height={icon.height ?? 64} alt={`${name} のアイコン`} />
     ) : (
@@ -26,5 +26,5 @@ export const MemberSummary: FC<MemberSummaryProps> = ({ name, icon, role, count,
         +{count}名
       </Tag>
     )}
-  </li>
+  </div>
 );
