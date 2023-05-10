@@ -11,7 +11,8 @@
     "ignoreDeprecations": "5.0",
     "paths": {
       "@/*": ["./src/*"],
-      "@public/*": ["./public/*"]
+      "@public/*": ["./public/*"],
+      "#model/*": ["../../packages/model/src/*"]
     },
     "rootDir": "./"
   },
