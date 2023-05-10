@@ -22,7 +22,7 @@ export const MemberSummary: FC<MemberSummaryProps> = ({ name, icon, role, count,
       {role && <p className="text-small text-keyplate-11">{role}</p>}
     </div>
     {count && (
-      <Tag color="keyplate" aria-label={`著者は他にも${count}名います。`} className="text-small font-bold">
+      <Tag color="keyplate" role="note" aria-label={`著者は他にも${count}名います。`} className="text-small font-bold">
         +{count}名
       </Tag>
     )}
