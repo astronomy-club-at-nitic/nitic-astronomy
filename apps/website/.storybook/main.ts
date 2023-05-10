@@ -24,6 +24,7 @@ const config: StorybookConfig = {
         alias: {
           ...config.resolve?.alias,
           '@': path.resolve(__dirname, '../src'),
+          '@public': path.resolve(__dirname, '../public'),
         },
       },
     };
