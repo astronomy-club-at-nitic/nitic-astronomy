@@ -4,6 +4,20 @@ import { twMerge } from '@/core/util/tw-merge.util';
 import AstralDarkBackgroundImage from '@public/image/background/astral-dark.jpg';
 import AstralLightBackgroundImage from '@public/image/background/astral-light.jpg';
 
+type PageSummaryMemberListProps = ComponentPropsWithoutRef<'ol'>;
+
+export const PageSummaryMemberList: FC<PageSummaryMemberListProps> = ({ children, className, ...props }) => (
+  <ol
+    className={twMerge(
+      'flex flex-col items-stretch justify-start gap-2 tablet:flex-row tablet:flex-wrap tablet:items-center tablet:justify-center tablet:gap-8',
+      className,
+    )}
+    {...props}
+  >
+    {children}
+  </ol>
+);
+
 type PageSummaryHeadingProps = ComponentPropsWithoutRef<'p'>;
 
 export const PageSummaryHeading: FC<PageSummaryHeadingProps> = ({ children, className, ...props }) => (
