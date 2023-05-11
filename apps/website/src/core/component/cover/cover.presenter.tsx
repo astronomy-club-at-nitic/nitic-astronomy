@@ -37,7 +37,8 @@ export const CoverTagList: FC<CoverTagListProps> = ({ children, className, ...pr
   </ul>
 );
 
-export type CoverProps = ComponentPropsWithoutRef<'div'> & Pick<ComponentPropsWithoutRef<typeof Image>, 'src' | 'placeholder' | 'blurDataURL'>;
+export type CoverProps = ComponentPropsWithoutRef<'div'> &
+  Partial<Pick<ComponentPropsWithoutRef<typeof Image>, 'src' | 'placeholder' | 'blurDataURL'>>;
 
 export const Cover: FC<CoverProps> = ({ src, placeholder, blurDataURL, children, className, ...props }) => {
   return (
