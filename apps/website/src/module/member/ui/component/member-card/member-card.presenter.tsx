@@ -8,7 +8,7 @@ import SquareLightLogoImage from '@public/image/logo/square-light.png';
 export type MemberCardProps = ComponentPropsWithoutRef<'div'> & Pick<Member, 'name' | 'icon' | 'role' | 'description' | 'externalLinks'>;
 
 export const MemberCard: FC<MemberCardProps> = ({ name, icon, role, description, className, externalLinks, ...props }) => (
-  <div className={twMerge('flex flex-col items-stretch gap-2 rounded-lg bg-keyplate-1 p-6 shadow-floating', className)} {...props}>
+  <div className={twMerge('flex flex-col items-stretch gap-2 rounded-lg bg-keyplate-1 p-6 shadow-card', className)} {...props}>
     <div className={'flex flex-row items-center gap-2.5'}>
       {icon ? (
         <MemberIcon src={icon.url} width={icon.width ?? 64} height={icon.height ?? 64} alt={`${name} のアイコン`} />

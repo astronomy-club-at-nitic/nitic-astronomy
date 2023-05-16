@@ -1,1 +1,1 @@
-export { PageSummary, PageSummaryHeading } from './page-summary.presenter';
+export { PageSummary, PageSummaryHeading, PageSummaryMemberList } from './page-summary.presenter';

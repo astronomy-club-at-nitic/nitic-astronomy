@@ -1,14 +1,17 @@
 import NextLink from 'next/link';
-import type { ComponentPropsWithoutRef, FC } from 'react';
+import type { LinkProps as NextLinkProps } from 'next/link';
+import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 import { twMerge } from '@/core/util/tw-merge.util';
 
-type LinkProps =
-  | ComponentPropsWithoutRef<typeof NextLink>
+// It is required to forward generics T to NextLinkProps in order to make DynamicRoute work.
+// e.g. `/tag/[tagId]`
+type LinkProps<T> =
+  | NextLinkProps<T>
   | (ComponentPropsWithoutRef<'a'> & {
       external: true;
     });
 
-export const Link: FC<LinkProps> = ({ children, className, ...props }) => {
+export const Link = <T,>({ children, className, ...props }: LinkProps<T>): ReactElement => {
   // Since experimental typedRoutes is enabled, NextLink only accepts
   // statically-typed routes and URL Objects, not strings.
   // Moreover, in React server components, it is unable to pass URL Objects via props. (SC to CC)

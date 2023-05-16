@@ -5,4 +5,7 @@ module.exports = {
     typedRoutes: true,
   },
   reactStrictMode: true,
+  images: {
+    remotePatterns: [{ protocol: 'https', hostname: 'images.microcms-assets.io', port: '', pathname: '**' }],
+  },
 };

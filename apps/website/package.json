@@ -23,11 +23,12 @@
   },
   "dependencies": {
     "@nitic-astronomy/model": "workspace:*",
+    "@nitic-astronomy/cms": "workspace:*",
     "@radix-ui/react-navigation-menu": "1.1.2",
+    "@vercel/og": "0.5.3",
     "@t3-oss/env-nextjs": "0.3.1",
     "@vercel/analytics": "1.0.1",
     "class-variance-authority": "0.6.0",
-    "@vercel/og": "0.5.4",
     "date-fns": "2.30.0",
     "date-fns-tz": "2.0.0",
     "dotenv": "16.0.3",

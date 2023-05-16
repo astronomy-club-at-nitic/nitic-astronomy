@@ -11,8 +11,9 @@
     "ignoreDeprecations": "5.0",
     "paths": {
       "@/*": ["./src/*"],
-      "@public/*": ["./public/*"],
-      "#model/*": ["../../packages/model/src/*"]
+      "#cms/*": ["../../packages/cms/src/*"],
+      "#model/*": ["../../packages/model/src/*"],
+      "@public/*": ["./public/*"]
     },
     "rootDir": "./"
   },
