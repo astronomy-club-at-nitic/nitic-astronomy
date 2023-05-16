@@ -3,6 +3,18 @@
     {
       "name": "nitic-astronomy",
       "path": "."
+    },
+    {
+      "name": "website",
+      "path": "apps/website"
+    },
+    {
+      "name": "model",
+      "path": "packages/model"
+    },
+    {
+      "name": "cms",
+      "path": "packages/cms"
     }
   ]
 }

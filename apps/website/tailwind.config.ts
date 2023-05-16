@@ -3,9 +3,10 @@ import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 import { createThemes } from 'tw-colors';
 
-import coreTokens from './src/style/token/core.json';
-import darkTokens from './src/style/token/dark.json';
-import lightTokens from './src/style/token/light.json';
+import breakpoints from './src/style/token/breakpoint.json';
+import coreTokens from './src/style/token/color/core.json';
+import darkTokens from './src/style/token/color/dark.json';
+import lightTokens from './src/style/token/color/light.json';
 
 const config: Config = {
   mode: 'jit',
@@ -14,6 +15,11 @@ const config: Config = {
   // この場合、`dark:`は`[data-theme="dark"] `に置き換えられる
   darkMode: ['class', '[data-theme="dark"]'], // 必ず`next-themes`の設定と合わせる！
   theme: {
+    screens: {
+      mobile: `${breakpoints.mobile.minWidth}px`,
+      tablet: `${breakpoints.tablet.minWidth}px`,
+      desktop: `${breakpoints.desktop.minWidth}px`,
+    },
     colors: {
       transparent: 'transparent',
       white: '#fff',
@@ -27,9 +33,17 @@ const config: Config = {
       ...coreTokens.colors,
     },
     extend: {
+      backgroundImage: {
+        'dot-pattern-light': "url('/image/background/dot-pattern-light.svg')",
+        'dot-pattern-dark': "url('/image/background/dot-pattern-dark.svg')",
+      },
+      boxShadow: {
+        card: '0px 4px 16px rgba(0, 0, 0, 0.05)',
+        floating: '0px 4px 32px rgba(0, 0, 0, 0.1)',
+      },
       fontFamily: {
         main: ['var(--font-noto-sans-jp)', ...defaultTheme.fontFamily.sans],
-        article: ['var(--font-Shippori-mincho-b1)', ...defaultTheme.fontFamily.serif],
+        article: ['var(--font-shippori-mincho-b1)', ...defaultTheme.fontFamily.serif],
       },
       fontSize: {
         article: [

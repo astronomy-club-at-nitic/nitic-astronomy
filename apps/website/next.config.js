@@ -1,12 +1,8 @@
-const removeImports = require('next-remove-imports');
-
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   experimental: {
     appDir: true,
-    fontLoaders: [{ loader: '@next/font/google', options: { subsets: ['latin'] } }],
+    typedRoutes: true,
   },
   reactStrictMode: true,
 };
-
-module.exports = removeImports()(nextConfig);

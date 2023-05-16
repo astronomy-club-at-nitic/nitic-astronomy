@@ -10,7 +10,9 @@
     "baseUrl": "./",
     "ignoreDeprecations": "5.0",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@public/*": ["./public/*"],
+      "#model/*": ["../../packages/model/src/*"]
     },
     "rootDir": "./"
   },

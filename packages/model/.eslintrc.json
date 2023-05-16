@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "extends": ["nitic-astronomy-node"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "import/extensions": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./"
+      }
+    }
+  }
+}
