@@ -1,14 +1,14 @@
-const tailwindScrollbar = require('tailwind-scrollbar');
-const defaultTheme = require('tailwindcss/defaultTheme');
-const { createThemes } = require('tw-colors');
+import tailwindScrollbar from 'tailwind-scrollbar';
+import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
+import { createThemes } from 'tw-colors';
 
-const breakpoints = require('./src/style/token/breakpoint.json');
-const coreTokens = require('./src/style/token/color/core.json');
-const darkTokens = require('./src/style/token/color/dark.json');
-const lightTokens = require('./src/style/token/color/light.json');
+import breakpoints from './src/style/token/breakpoint.json';
+import coreTokens from './src/style/token/color/core.json';
+import darkTokens from './src/style/token/color/dark.json';
+import lightTokens from './src/style/token/color/light.json';
 
-/** @type {import('tailwindcss').Config} */
-const config = {
+const config: Config = {
   mode: 'jit',
   content: ['./src/**/*.{ts,tsx}'],
   // Tailwind CSSのユーティリティセレクタ`dark:`に対応するCSSセレクタ
@@ -107,4 +107,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;
