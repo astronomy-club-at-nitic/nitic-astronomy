@@ -7,17 +7,17 @@ export const tagColors = ['plum', 'yellow', 'lime', 'mint', 'sky', 'amber', 'key
 export type TagColor = (typeof tagColors)[number];
 
 const tagStyle = tv({
-  base: 'inline-flex rounded-full px-[0.75em] py-[0.375em]',
+  base: /* tw */ 'inline-flex rounded-full px-[0.75em] py-[0.375em] ',
   variants: {
     color: {
       keyplate: 'bg-keyplate-4 text-keyplate-11',
       plum: 'bg-plum-4 text-plum-11',
-      yellow: 'bg-yellow-4 text-yellow-11',
+      yellow: 'bg-yellow-4 text-yellow-11 ',
       lime: 'bg-lime-4 text-lime-11',
       mint: 'bg-mint-4 text-mint-11',
       sky: 'bg-sky-4 text-sky-11',
-      amber: 'bg-amber-4 text-amber-11',
-    } satisfies Record<TagColor, string>,
+      amber: 'bg-amber-4 text-amber-11 ',
+    },
     forceDark: {
       true: '',
       false: '',
