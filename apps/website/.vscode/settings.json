@@ -2,14 +2,13 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.tsdk": "/workspaces/nitic-astronomy/node_modules/.pnpm/typescript@4.9.5/node_modules/typescript/lib",
 
-  // Tailwind CSS IntelliSense settings for CVA (class-variance-authority)
-  // Refer: https://cva.style/docs/installation
+  // An intellisense matcher setting for Tailwind Variants
+  // Refer: https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional
   "tailwindCSS.experimental.classRegex": [
-    // HACK: Since the TailwindCSS Intellisense extension does not recognize `string[]` as proper element somehow,
-    // setting recommended regexps in destructed form.
-    "cva\\(([^)]*)\\)"
-    // Temporally disabling the second regexp because it makes tailwind classes suggestions enabled for all js objects.
-    // "[\"'`]([^\"'`]*).*?[\"'`]"
+    // Inside tv function
+    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    // String after /* tw */ e.g. /* tw */ 'text-red-500'
+    ["\\/\\*\\s?tw\\s?\\*\\/\\s*[\\\"'`]([^\\\"'`]*).*?[\\\"'`]"]
   ],
 
   // By default VS Code will not trigger completions when editing "string" content, for example within JSX attribute values.

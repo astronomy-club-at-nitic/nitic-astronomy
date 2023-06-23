@@ -16,5 +16,8 @@
       "name": "cms",
       "path": "packages/cms"
     }
-  ]
+  ],
+  "settings": {
+    "typescript.tsdk": "nitic-astronomy/node_modules/typescript/lib"
+  }
 }

@@ -22,13 +22,12 @@
     "chromatic": "pnpx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
-    "@nitic-astronomy/model": "workspace:*",
     "@nitic-astronomy/cms": "workspace:*",
+    "@nitic-astronomy/model": "workspace:*",
     "@radix-ui/react-navigation-menu": "1.1.2",
-    "@vercel/og": "0.5.3",
     "@t3-oss/env-nextjs": "0.3.1",
     "@vercel/analytics": "1.0.1",
-    "class-variance-authority": "0.6.0",
+    "@vercel/og": "0.5.3",
     "date-fns": "2.30.0",
     "date-fns-tz": "2.0.0",
     "dotenv": "16.0.3",
@@ -42,6 +41,7 @@
     "recoil": "0.7.7",
     "sharp": "0.32.1",
     "tailwind-merge": "1.12.0",
+    "tailwind-variants": "0.1.7",
     "ts-pattern": "4.3.0",
     "unicount": "1.2.0",
     "zod": "3.21.4"

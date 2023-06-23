@@ -1,4 +1,5 @@
 import tailwindScrollbar from 'tailwind-scrollbar';
+import { withTV } from 'tailwind-variants/transformer';
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 import { createThemes } from 'tw-colors';
@@ -107,4 +108,6 @@ const config: Config = {
   },
 };
 
-export default config;
+// Tailwind Variantsの機能の一つであるResponsive Variantsを有効化する
+// Refer: https://www.tailwind-variants.org/docs/getting-started
+export default withTV(config);
