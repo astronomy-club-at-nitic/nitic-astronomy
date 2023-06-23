@@ -6,8 +6,8 @@ export const tv: TV = (options, config) => {
   return tvBase(options, {
     ...config,
     twMerge: true,
-    // Tailwind Variantsの型定義が依存パッケージの`tailwind-merge`にそぐわないものなので、型を強制的に上書きする
-    // このIssueが解決されたら、型の上書きを削除する
+    // HACK: Tailwind Variantsの型定義が依存パッケージの`tailwind-merge`にそぐわないものなので、型を強制的に上書きする
+    // TODO: このIssueが解決されたら、型の上書きを削除する
     // Refer: https://github.com/nextui-org/tailwind-variants/issues/58
     twMergeConfig: tailwindMergeConfig as Required<typeof tailwindMergeConfig>,
   });
