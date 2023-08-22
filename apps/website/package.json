@@ -68,6 +68,6 @@
     "storybook": "7.0.12",
     "tailwind-scrollbar": "3.0.4",
     "tailwindcss": "3.3.2",
-    "tw-colors": "1.2.6"
+    "tw-colors": "2.2.0"
   }
 }
