@@ -47,7 +47,7 @@
     "zod": "3.21.4"
   },
   "devDependencies": {
-    "@funboxteam/optimizt": "4.1.1",
+    "@funboxteam/optimizt": "5.0.2",
     "@nitic-astronomy/jest": "workspace:*",
     "@nitic-astronomy/prettier": "workspace:*",
     "@nitic-astronomy/stylelint": "workspace:*",
